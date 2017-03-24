@@ -1,0 +1,30 @@
+.bs-example {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.chart-config {
+    width: 100%;
+    height: 360px;
+    float: left;
+}
+#graph_id td {
+    width: 50%;
+}
+th {
+    width: 20%;
+    vertical-align: middle !important;
+}
+.blue-color {
+    color: #3266CC;
+}
+.red-color {
+    color: #DC3812;
+}
+.orange-color {
+    color: #FE9900;
+}
+.green-color {
+    color: #109717;
+}

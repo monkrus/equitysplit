@@ -1,0 +1,75 @@
+/**
+ * Created by krutoy on 3/19/17.
+ */
+var firebase = require("firebase");
+var fs = require('fs');
+var jsonfile = require('jsonfile');
+var beautify = require("json-beautify");
+var firebase_credentials = require("../config/firebase_credentials.json");
+
+var config = {
+    apiKey:             firebase_credentials.apiKey,
+    authDomain:         firebase_credentials.authDomain,
+    databaseURL:        firebase_credentials.databaseURL,
+    storageBucket:      firebase_credentials.storageBucket,
+    messagingSenderId:  firebase_credentials.messagingSenderId
+};
+firebase.initializeApp(config);
+
+
+module.exports = {
+    saveMessage: function(name, email, subject, message) {
+
+        firebase.database().ref('messages/').push({
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            created_at : new Date().toLocaleString(),
+            utc: new Date().getTime()
+        });
+
+        return firebase.database().ref('/messages/').orderByChild('utc').once('value').then(function(snapshot) {
+            // console.log(snapshot.val());
+            // console.log(typeof snapshot.val());
+
+            fs.writeFile("./helpers/messages.txt", JSON.stringify(snapshot.val()), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("File saved successfully!");
+            });
+
+            jsonfile.writeFile('./helpers/messages.json', snapshot.val(), function (err) {
+                console.error(err)
+            })
+
+        });
+
+    },
+    subscribe: function(email) {
+
+        firebase.database().ref('subscribers/').push({
+            email: email,
+            created_at : new Date().toLocaleString(),
+            utc: new Date().getTime()
+        });
+
+        return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
+            // console.log(snapshot.val());
+
+            fs.writeFile("./helpers/subscribers.text", JSON.stringify(snapshot.val()), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("File saved successfully!");
+            });
+
+            jsonfile.writeFile('./helpers/subscribers.json', snapshot.val(), function (err) {
+                console.error(err)
+            });
+
+        });
+    }
+};
+

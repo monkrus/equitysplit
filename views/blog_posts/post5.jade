@@ -1,0 +1,185 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='5')
+                    h3.ctitle All rivers flow: dynamic approach to splitting your equity shares.
+                    p
+                        csmall Posted: January 15, 2017.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/river.png')
+                    br
+                    p Reading time:
+                        strong 3 minutes
+                    br
+                    p
+                        | All rivers flow, and all rivers change. Do you adapt to an ever-changing state? How do you decide how equity should be split in your company?
+                    p
+                        | Startups and companies are going through tremendous evolution during the first years of their existence. It can completely overhaul and change ideas, focus, working style, product and even founders. Speaking geometrically, a triangle can literally take the shape of  a cube in the entrepreneurial world. How does one decide how to deal with an equity split  in such conditions?
+                    p
+                        i
+                            | Seasoned entrepreneur Jason S. states: Equity split is based on the value and time that each person brings to the table. Value is based on cash invested and how much income they could make in a relevant position as an employee in another company. I.e. a software engineer should get more ownership than an executive assistant all else being equal.
+                    p
+                        | There are two options of tracking value and equity allocation:
+                        strong Fixed
+                        |  and
+                        strong Dynamic
+                        | . Take a look at both approaches in greater detail.
+                    p
+                        strong (1) Fixed approach
+                        |  gets every single member a fixed amount of shares. For example, three founders split the  company&apos;s ownership according to some logic and it is 40%, 35% and 25%. Then they bring someone new into the company, his or her amount of shares is set in stone according to the position. Possibly 5%. Then this share has to be taken from existing shareholders thereby diluting the share held. Perhaps it will be 38%, 33%, 24% and 5%.
+                    p
+                        strong (2) Dynamic approach
+                        |  allocation will convert members productivity and contribution into Equity Share ownership. This approach takes into consideration many factors on an ongoing basis, as often as weekly or monthly as follows:
+                    ul
+                        li Hours worked
+                        li Milestones completed
+                        li Cash invested and contributed
+                        li Hours worked converted based on the person&rsquo;s market value (compensation)
+                        li Ownership decreases or increases based on individual contribution
+                        li Shares of those who leave the company will be diluted over time to other members
+                    p
+                        | The team is able to vote to determine successful completion of the tasks (in monthly reviews).
+                    p
+                        | Your shares will decrease if you procrastinate, and increase, if your performance is above average. It will allow your company to be at the peak performance and fair towards its members.
+                    p
+                        | Here is the real story:
+                        br
+                        i
+                            | A startup owner  hires a CEO that gets fired 6 months later due to simply not showing up and doing his job. It was stated in the documents that he gets X% of the company shares irrespective of changes or fixed allocation. They made a mistake in this agreement, because the amount was large enough to control the company even though this  CEO was no longer part of it.
+                            | The owner had to engage lawyers to take control of the situation which means completely wasted time and money.
+                    p What would have happened if they used a dynamic approach?
+                    p
+                        ul
+                            li
+                                | They would have a good understanding of every member&apos;s performance from day one including this particular individual. Each person starts with zero ownership and only ongoing contribution will translate into shares ownership over time.
+                            li
+                                | If this CEO contributed at the beginning and then stopped contributing,  the amount of shares would have decreased to none at this point.
+                    p
+                        | This problem can be prevented from ever coming up in the first place. Nobody wants to pay for nothing, don&apos;t you agree?
+                    p
+                        | We are curious to hear your equity ownership situation stories. Did you have similar issues and if you did, how did you resolve them? Do you use a specific system that works for you?
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    .spacing
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

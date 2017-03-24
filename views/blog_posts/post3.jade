@@ -1,0 +1,193 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                // BLOG POSTS LIST
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='3')
+                    h3.ctitle Agent provocateur
+                    p
+                        csmall Posted: December 16, 2016.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/agent.png')
+                    br
+                    p You truly believe everything is under control. Engine just got engaged. Success is inevitable. However, there is one factor you never thought of, the one that can ruin your vessel from inside.
+                    p In our previous post we tried to give startup founders a heads up on basic preparation. We presented a list of checkpoints to set before getting the enterprise going.
+                    p A team&rsquo;s dynamic can be as follows:
+                    p
+                        ol
+                            li there is one person inspired by an idea, the leader (usually the one who created it), with the rest following.
+                            li there can be two or more leaders and the rest are followers
+                            li then there could be a mix and match, of course
+                    p The followers could also be full of energy and share the vision for the future, but they are not always ready to go all the way. So what are your agent provocateurs, or provoking agents?
+                    p
+                        em
+                            | [
+                            strong provocateur
+                            | . Noun. (plural
+                            strong provocateurs
+                            | ) One who engages in provocative behavior. An undercover agent who incites suspected persons to partake in or commit criminal acts.]
+                    p
+                        ol
+                            li
+                                strong The momentum is gone.
+                                |  Once the implementation (or discussion) takes too long, or the idea does not seem to be feasible anymore, their level of enthusiasm lowers down dramatically. There is no focus on important aspects such as keeping customers satisfied with your product, revenue growth and constant revisions of what works and what doesn&apos;t.
+                            li
+                                strong Individuals do not share the same goals and are not open about it.
+                                |  Another scenario might describe the case when one of the founders follows his own &ldquo;secret &rdquo;plan, different from the one the team originally had agreed on. It results in team members blaming each other which creates a negative atmosphere within the company.
+                            li
+                                strong Too many things to focus on.
+                                |  Your third obstacle is a lack of focus. Not following the implementation plan, a desire to fix it all at the same time, or randomly switching topics is a symptom for this disease. There are too many things that have to be done. Focusing and eliminating non-essential distractions can allow your startup to survive and prosper.
+                            li
+                                strong Not having a clear framework of how everyone gets paid and rewarded.
+                                |  There are many examples when people cannot agree on their contributions and their equity share which results in heated discussions or even arguments while there is no focus on product building.
+                    p
+                        | What are the fundamental remedies? We recommend you to consider the following:
+                    p
+                        ul
+                            li
+                                | An excellent team is the core element and should be the key pillar for a great startup and the leadership base of a future company. You would start looking for team members from your inner circle:
+                                ul
+                                    li colleagues
+                                    li reliable business partners
+                                    li friends
+                                    li and possibly relatives
+                                |                     Ideally you should select people you know, someone you can trust.
+                            li
+                                | Try to imagine your future co-owner&grave;s behavior in a very stressful situation. What does it take to make him lose control?  Expect that this is a pattern and it will potentially repeat in the future. Eliminate negative people right away. You can&apos;t change them and it will only slow you down.
+                            li
+                                | Establish a transparent equity sharing framework which is adjusted based on continuous contribution and work by participants.
+                            li
+                                | How much guidance do other members of the group need? Be clear about it and accept it.
+                            li
+                                | We all believe in equal partnership, but successful startups have someone who can consolidate the team.
+                            li
+                                | A company should have a healthy culture, be transparent and avoid talking behind other people&apos;s backs.
+                            li
+                                | The tiniest misunderstandings or issues have to be openly discussed and solved. Make sure to address difficult issues and don&apos;t let them build up. This leads to increased conflicts later.
+                            li
+                                | Plan your development as a company and follow it accordingly. Long term goals are made of 3-5 year plans. 3-5 year plans are made of 1 year plans which are made of 1-3 month plans. Success can be reached by making small and focused achievements.
+                    p Please add more points from your experience.
+                    p Share your knowledge in the comments.
+                    br
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

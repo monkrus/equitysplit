@@ -1,0 +1,155 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        // Fixed navbar
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                // BLOG POSTS LIST
+                .col-lg-8
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='2')
+                    h3.ctitle Minus one: your partner left the company.
+                    p
+                        csmall Posted: December 11, 2016.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/coffee.jpg')
+                    br
+                    p Remember the time, when  you enjoyed a cup of coffee with your partner, discussing the exponential growth of the company?
+                    p One Person might no longer be interested in the project, disagreeing on how things have to be done, have no time to allocate to business or might be fired. Your partner put time and money in the business, or even brought some equipment that is essential to the company. Now they want it back, or at least a portion of it.
+                    p
+                        ol
+                            li How do you handle such a conversation?
+                            li How do you prevent this situation? Or make it smooth?
+                            li What do you do about money and time invested?
+                    p Remember each situation is different and has to be approached accordingly. To be ready for that, here is the list of things you prepare for yourself as a business owner and your partner prior to starting working together:
+                    p
+                        ol
+                            li It is a very unpleasant conversation you might face if this unhappy eventuality was never discussed. Be direct, polite and fair. Many people cannot handle such a conversation, so it&apos;s up to you to do it well, be clear, honest and  transparent. Manage it as if you have to work with this person again. Think long term and don&apos;t avoid it.
+                            li Plan for it and discuss it. Most importantly, work with people who can have an open mind, are ethical in business (read: you can trust) and able to handle such a situation logically. Good staff  is the best asset that the company can have. Start-up companies are moving fast, change fast and adopt change.  Work with people who can move and learn as fast as well.
+                            li It is a good idea not to just discuss, but confirm those statements in writing to avoid future misunderstanding. Will all partners be putting an equal amount of money into the project? Are the finances spent non-refundable? How much time are you willing to allocate? What about your team? What if the company needs to continue using the finances?  Are there possible rental or buyout options?
+                    p These are some measures that can be taken at the beginning of a venture to establish ground rules and procedures to follow:
+                    p
+                        ul
+                            li Discuss what is going to happen if someone leaves the team after the first day since the start-up was founded or the first day since they joined
+                            li Sign a contract
+                            li Establish a vesting period of 2 years and if the person leaves prior to that deadline they forfeit their share
+                            li Should the company compensate a quitting team member if the person did not contribute financially?
+                            li Should time invested, ideas and intellectual property be considered company property?
+                            li Supplies and equipment becomes company property
+                            li If equity was calculated using cash multipliers (4x multiplier) then discount cash to its original value. If possible then return the cash contributed back to the person leaving your team
+                            li For how long should a quitting member have the right to buy equity back
+                            li Remember that the startup will have no obligations to any person who leaves the team
+                            li The important aspect is to be fair to everyone
+                    p It is important to understand that the company is losing other assets as well, not only the person who is leaving the company. It is slowing business growth and development until a newly recruited person joins the team. Then it takes time to orientate and settle the new person, establish a working relationship and mutual goals and objectives.
+                    p What would you add to the list? Please share your thoughts.
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

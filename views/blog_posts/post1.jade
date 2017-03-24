@@ -1,0 +1,144 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        // Fixed navbar
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='../../') HOME
+                        li
+                            a(href='../../#about') ABOUT
+                        li
+                            a(href='../../#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                // BLOG POSTS LIST
+                .col-lg-8
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='1')
+                    h3.ctitle How do you share equity in your startup?
+                    p
+                        csmall Posted: December 3, 2016.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/equity.jpg')
+                    br
+                    p After talking to numerous entrepreneurs we discovered that equity sharing is an ongoing problem and several recurring headaches stand out :
+                    ul
+                        li Startups fail before launching their product
+                        li Most new companies are facing this issue
+                        li There is no comprehensive and direct solution to address it
+                    p We experienced it ourselves and at first we could not find a straightforward approach on how to split equity between the team members.
+                    p Cohesive Bits is a team of passionate professionals and friends who are working on defining equity share among members of startup companies. Our goal is to create an application that  measures your team members&rsquo; productivity and help you slice the pie according to every member&rsquo;s contribution.
+                    p We would like to hear you opinion on this topic. At what point in your company&apos;s development did the question of equity sharing come up? What was the toughest topic to discuss and the most difficult issue to solve? Please share your stories.
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    .spacing
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

@@ -1,0 +1,58 @@
+extends layout
+
+block content
+    body
+        include navbar
+        #headerwrap
+            .container
+                .row
+                    .col-lg-12
+                        div(style='margin-top:50px;')
+                        h3 Messages
+                        table#messages_table.table.table-condensed.table-hover.table-bordered.table-responsive(style='background-color:white;')
+                            thead
+                                tr
+                                    th Email
+                                    th Name
+                                    th Subject
+                                    th Date
+                                    //th Message
+                            tbody
+                                for message in messages
+                                    tr
+                                        td= message.email
+                                        td= message.name
+                                        td= message.subject
+                                        td= message.created_at
+                                        //td= message.message
+                        h3 Subscribers
+                        table#subscriptions_table.table.table-condensed.table-hover.table-bordered.table-responsive(style='background-color:white;')
+                            thead
+                                tr
+                                    th Email
+                                    th Date
+                            tbody
+                                for subscriber in subscriptions
+                                    tr
+                                        td= subscriber.email
+                                        td= subscriber.created_at
+                        div(style='margin-top:150px;')
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/', target='_blank')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split', target='_blank')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490', target='_blank')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+                                i.fa.fa-reddit-alien
+
+            .container
+                .row.centered
+                    p Copyright &copy; 2017 Cohesive Bits.

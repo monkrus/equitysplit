@@ -1,0 +1,202 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='6')
+                    h3.ctitle Measure twice! Team&rsquo;s output formula.
+                    p
+                        csmall Posted: January 24, 2017.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/car_factory.png')
+                    br
+                    p
+                        | Reading time:
+                        strong 4 minutes
+                    br
+                    p
+                        | It is easy to measure activity. Did you ever try to measure an individual&rsquo;s output in startup, workplace, company? Measure of the company&apos;s productivity: revenues/sales and income. Measure of the team&rsquo;s productivity: projects delivered, met deadlines, and perhaps ability to put up fires or lack of such.
+                    p
+                        strong
+                            | Let&rsquo;s tackle measuring individual productivity as it is harder to define: hours, sales, units of sales, tasks, projects, writing an article and a number of readers and etc.
+                    p
+                        strong Solution(s) to issues
+                    p
+                        | Andrew S. Grove, a great CEO of Intel, wrote in his &quot;High Output Management&quot; book:
+                        br
+                        i
+                            | &quot;The first rule is that a measurement&mdash;any measurement&mdash;is better than none. But
+                            strong a genuinely effective indicator will cover the output of the work unit
+                            |  and not simply the activity involved. Obviously, you measure a salesman by the orders he gets (output), not by the calls he makes (activity). The second criterion for a good indicator is that what you measure should be a physical, countable thing.&quot;
+                    p
+                        | Such indicators have many uses. First, they spell out very clearly what the
+                        strong objectives of an individual or group are
+                        | . Second, they provide a
+                        strong degree of objectivity when measuring an administrative function
+                        | . Third, and as important as any, they give us a
+                        strong
+                            | measure by which various administrative groups performing the same function in different organizations can be compared with each other
+                        | .
+                    p
+                        | First thing that comes to the mind is  work hours. A person spends 40 hours of work which is  a perfect definition of activity. How do we know if these hours were spent productively? How do you measure that a person delivers work,or spends his day walking back and forth to Starbucks or checking out Facebook?
+                        strong How do you measure output of the work unit?
+                    p
+                        | That brings us to measurement: various tasks and work completed that add value to the business. It is defined as creating a  workflow that allows business to be profitable and measurable behavior that keeps the company afloat. It is computed by the
+                        strong accurate completion of milestones and output delivery
+                        | .
+                    p
+                        | Lets define output for a typical four member team or startup: leader/manager, analyst, developer and sales person.
+                    p
+                        strong 1. The Leader / manager
+                    p
+                        | Successful execution requires significant discipline. There is a high chance that the leader&rsquo;s vision is focused on key issues. If the leader is able to organize people, processes and workflows, then results will be more likely outstanding.
+                    p
+                        | The leader role and output is perfectly defined by Andrew S. Grove:
+                        br
+                        i
+                            | &ldquo;We can sum matters up with the proposition that: A manager&rsquo;s output = The output of his organization (startup or team) + The output of the neighboring organizations under his influence. The definition of &ldquo;manager&rdquo; should be broadened: individual contributors who gather and disseminate know-how and information should also be seen as middle managers, because they exert great power within the organization. But the key definition here is that the output of a manager is a result achieved by a group either under her supervision or under her influence.&rdquo;
+                    p
+                        | The leader&apos;s output will be measured by productivity of the analyst, the developer and the sales person. It takes an entire team to win.
+                    p
+                        strong 2. The Analyst
+                    p
+                        | A person who is analyzing data, specific  information, developing solutions to business problems, or to advancing a company&apos;s sales efforts. A typical equity analyst would be looking into the company&apos;s financial information, industry and economic data in order to price securities. Output of such an analyst will be correct price valuations of various companies and frequency of such updates.
+                    p
+                        strong 3. The Developer
+                    p
+                        | Developers specialize in creating applications. They have to write readable code as a courtesy to their colleagues, handle debugging and ensure fast execution of such applications by constantly optimizing and refactoring the code.
+                    p
+                        strong 4. The Salesperson
+                    p
+                        | Such an individual is the easiest to define: a person who sells goods and services to customers. The output is measured by the amount of sales he or she is able to make during a given period. Compensation can be decreased or increased based and directly related on the amount of goods or services sold.
+                    p
+                        | A tracking method ... &#x2714;... &#x2714;... &#x2714;... gives a good understanding of performance and allows the team to build a sustainable company framework. Summarizing what was said above, these factors are standing out:
+                    ul
+                        li Work hours
+                        li Task and projects completion
+                        li Sales unit and dollar volume
+                        li Peer comparison
+                    p
+                        | The complexity of the measurement involves a human factor as well. It is not just a diligent execution of everyday tasks, but also a proactivity, ability to go beyond the routine, being flexible in decisions and thinking, the ability to focus on the right aspects of the work.
+                    p
+                        | How do you measure your productivity? Productivity of your team and startup? Will reply within 24 hours.
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

@@ -1,0 +1,416 @@
+//doctype html(lang='en')
+//head
+//	meta(charset='utf-8')
+//	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+//	meta(name='viewport', content='width=device-width, initial-scale=1')
+//	meta(name='viewport', content='width=device-width, initial-scale=1')
+//	link(rel='shortcut icon', href='ico/favicon.ico')
+//	title Equity Split
+//	meta(property='og:url', content='http://www.equity-split.com/blog')
+//	meta(property='og:description', content='startup entrepreneur equity')
+//	meta(name='author', content='Arpad Asztalos')
+//	meta(property='og:image', content='http://s11.postimg.org/5qh4fb3g3/equity_split.png')
+//	link(href='css/bootstrap.css', rel='stylesheet')
+//	link(href='css/style.css', rel='stylesheet')
+//	link(href='css/font-awesome.min.css', rel='stylesheet')
+//	//if lt IE 9
+//	  script(src='../../js/ie8-responsive-file-warning.js')
+//	//if lt IE 9
+//	  script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+//	  script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+//	script(src='js/modernizr.js')
+//body
+extends layout
+
+block content
+
+    body
+
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        // Fixed navbar
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/demo') DEMO
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='blog') BLOG
+
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+                // /row
+            // /container
+        // /blue
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                a(name='about')
+        // BLOG POSTS LIST
+        .col-lg-8
+            // Blog Post 8
+            a.anchor(name='8')
+            h3.ctitle What would you pay others? Yourself?
+            p
+                csmall Posted: February 8, 2017.
+                csmall2 By: Sergei Stadnik
+            br
+            p
+                img.img-responsive(src='img/blog/dollars.jpg')
+            br
+            p
+                strong 3 minutes
+            br
+            p
+                strong
+                    br
+                    br
+            p We are asking ourselves these question all the time. It is a reality check, a reminder to upgrade skills, stay relevant and keep on top of modern technology. There will always be a dilemma of choosing the right reward for startup participants or any level employee. No approach is right or wrong, but let&rsquo;s review possible options.
+            a(href='blog/post8') read more
+            // Blog Post 7
+            a.anchor(name='7')
+            h3.ctitle Probation period for new employee
+            p
+                csmall Posted: February 1, 2017.
+                csmall2 By: Sergei Stadnik
+            br
+            p
+                img.img-responsive(src='img/blog/stick_figures.png')
+            br
+            p Reading time: #[ strong 4 minutes ]
+            br
+            p The day when a new member becomes a part of the team and starts contributing is an exciting moment for this person. The newcomer typically  is very enthusiastic and anxious to add value. He / she has new ideas and views. It is critical to see how a prospective partner / teammate will fit in and able to work with the existing team.
+            p #[strong How to avoid the recruiting gamble and be confident about new  hire?]
+            p The probation period is a time of finding out who the person really is. No matter how great the first impression was during the interview, you will not know the true character and behaviours of the person until you worked together for some time. Typically, the probation period of 3-6 months is a good indicator of what to expect from an individual. It is a good portion of time to evaluate the potential and hidden caveats. Based on personal experience, a 2-3 month period is good enough for a person to fully reveal himself/herself.
+            p Why do you need a probational period? Here are some real startup examples:
+            p #[strong Situation A] : John was a member of the "Starbucks club" before the startup was even formed. He was discussing the ideas of sipping the hot frappucino and expressing the desire to becoming the head of an as of yet non-existent department.
+            ul
+                a(href='blog/post7') read more
+                br
+                br
+                br
+                br
+                br
+                br
+                .spacing
+                br
+                br
+                // Blog Post 6
+                a.anchor(name='6')
+                h3.ctitle Measure twice! Team's output formula.
+                p
+                    csmall Posted: January 24, 2017.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/car_factory.png')
+                br
+                p Reading time: #[ strong 4 minutes ]
+                br
+                p It is easy to measure activity. Did you ever try to measure an individual&rsquo;s output in startup, workplace, company? Measure of the company&apos;s productivity: revenues/sales and income. Measure of the team&rsquo;s productivity: projects delivered, met deadlines, and perhaps ability to put up fires or lack of such.
+                p
+                    strong Let's tackle measuring individual productivity as it is harder to define: hours, sales, units of sales, tasks, projects, writing an article and a number of readers and etc.
+                a(href='blog/post6') read more
+                br
+                br
+                br
+                br
+                br
+                br
+                .spacing
+                br
+                br
+                // Blog Post 5
+                a.anchor(name='5')
+                h3.ctitle All rivers flow: dynamic approach to splitting your equity shares.
+                p
+                    csmall Posted: January 15, 2017.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/river.png')
+                br
+                p Reading time: #[ strong 3 minutes ]
+                br
+                p All rivers flow, and all rivers change. Do you adapt to an ever-changing state? How do you decide how equity should be split in your company?
+                p Startups and companies are going through tremendous evolution during the first years of their existence. It can completely overhaul and change ideas, focus, working style, product and even founders. Speaking geometrically, a triangle can literally take the shape of  a cube in the entrepreneurial world. How does one decide how to deal with an equity split  in such conditions?
+                p
+                    i Seasoned entrepreneur Jason S. states: Equity split is based on the value and time that each person brings to the table. Value is based on cash invested and how much income they could make in a relevant position as an employee in another company. I.e. a software engineer should get more ownership than an executive assistant all else being equal.
+                p
+                    | There are two options of tracking value and equity allocation:
+                    strong Fixed
+                    |  and
+                    strong Dynamic
+                    | . Take a look at both approaches in greater detail.
+                a(href='blog/post5') read more
+                br
+                br
+                br
+                br
+                br
+                br
+                .spacing
+                br
+                br
+                // Blog Post 4
+                a.anchor(name='4')
+                h3.ctitle Jack of all trades or specialist - What is my responsibility in the startup?
+                p
+                    csmall Posted: December 31, 2016.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/dontknow.jpg')
+                br
+                p Reading time: #[ strong 3 minutes ]
+                br
+                p The holidays are coming with the smell of ginger cookies and the aroma of pine trees. It is a good time to relax, enjoy a cup of hot tea, think about what goals to achieve and what to focus your team on during next year.
+                p What are the responsibilities of the king?
+                a(href='blog/post4') read more
+                br
+                br
+                br
+                br
+                br
+                br
+
+
+                .spacing
+                br
+                br
+                // Blog Post 3
+                a.anchor(name='3')
+
+                h3.ctitle Agent provocateur
+                p
+                    csmall Posted: December 16, 2016.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/agent.png')
+                br
+                p Reading time: #[ strong 4 minutes ]
+                br
+                p You truly believe everything is under control. Engine just got engaged. Success is inevitable. However, there is one factor you never thought of, the one that can ruin your vessel from inside.
+                p In our previous post we tried to give startup founders a heads up on basic preparation. We presented a list of checkpoints to set before getting the enterprise going.
+                p A team's dynamic can be as follows:
+                a(href='blog/post3') read more
+                // <a href="https://www.reddit.com/submit" class="reddit-share-button" onclick="window.location = 'https://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false">
+                // <img src="https://www.redditstatic.com/spreddit13.gif" alt="submit to reddit" border="0" />
+                // </a>
+                // <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+                // <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                // <div class="fb-share-button" data-href="http://www.equity-split.com/blog" data-layout="button" data-size="large" data-mobile-iframe="true">
+                // <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.equity-split.com%2Fblog&amp;src=sdkpreparse">Share</a>
+                // </div>
+                // Go to www.addthis.com/dashboard to customize your tools
+                script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                // <script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                // <script type="IN/Share" data-size="large" data-url="http://www.equity-split.com/blog"></script>
+                // Load Facebook SDK for JavaScript
+                // <div id="fb-root"></div>
+                // <script>(function(d, s, id) {
+                // var js, fjs = d.getElementsByTagName(s)[0];
+                // if (d.getElementById(id)) return;
+                // js = d.createElement(s); js.id = id;
+                // js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";
+                // fjs.parentNode.insertBefore(js, fjs);
+                // }(document, 'script', 'facebook-jssdk'));</script>
+                // Your share button code
+                // <div class="fb-share-button"
+                // data-href="https://www.equity-split.com/blog"
+                // data-layout="button_count">
+                // </div>
+                br
+                br
+
+                p(style='text-align:center; font-size:20px') ***
+
+                br
+                br
+                br
+                br
+                br
+                br
+                // <div class="hline"></div>
+                // Blog Post 2
+                a.anchor(name='2')
+                h3.ctitle Minus one: your partner left the company.
+                p
+                    csmall Posted: December 11, 2016.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/coffee.jpg')
+                br
+                p Reading time: #[ strong 2 minutes ]
+                br
+                p Remember the time, when  you enjoyed a cup of coffee with your partner, discussing the exponential growth of the company?
+                p One Person might no longer be interested in the project, disagreeing on how things have to be done, have no time to allocate to business or might be fired. Your partner put time and money in the business, or even brought some equipment that is essential to the company. Now they want it back, or at least a portion of it.
+                a(href='blog/post2') read more
+                p(style='text-align:center; font-size:20px') ***
+                br
+                br
+                br
+                br
+                br
+                br
+
+                .spacing
+                br
+                br
+                // Blog Post 1
+                a.anchor(name='1')
+                h3.ctitle How do you share equity in your startup?
+                p
+                    csmall Posted: December 3, 2016.
+                    csmall2 By: Sergei Stadnik
+                br
+                p
+                    img.img-responsive(src='img/blog/equity.jpg')
+                br
+                p Reading time: #[ strong 1 minute ]
+                br
+                p After talking to numerous entrepreneurs we discovered that equity sharing is an ongoing problem and several recurring headaches stand out :
+                a(href='blog/post1') read more
+                p(style='text-align:center; font-size:20px') ***
+                br
+                br
+                br
+                br
+                br
+                br
+
+
+                .spacing
+                br
+                br
+
+        // SIDEBAR
+        .col-lg-4
+            //
+              <h4>Search</h4>
+              <div class="hline"></div>
+              <p>
+              <br/>
+              <input type="text" class="form-control" placeholder="Search something">
+              </p>
+              <div class="spacing"></div>
+              <h4>Categories</h4>
+              <div class="hline"></div>
+              <p><a href="#"><i class="fa fa-angle-right"></i> Equity Share</a> <span class="badge badge-theme pull-right">1</span></p>
+              <p><a href="#"><i class="fa fa-angle-right"></i> Startup</a> <span class="badge badge-theme pull-right">1</span></p>
+              <div class="spacing"></div>
+            h4 Recent Posts
+            .hline
+            ul.popular-posts
+                br
+                li
+                    a(href='#8')
+                        img(src='img/blog/dollars_thumb.jpg', alt='Popular Post')
+                    p
+                        a(href='blog/post8') What would you pay others? Yourself?
+                    em Posted on 02/08/17
+                li
+                    a(href='#7')
+                        img(src='img/blog/stick_figures_thumb.png', alt='Popular Post')
+                    p
+                        a(href='blog/post7') Probation period for new employee
+                    em Posted on 02/01/17
+                li
+                    a(href='#6')
+                        img(src='img/blog/car_factory_thumb.png', alt='Popular Post')
+                    p
+                        a(href='blog/post6') Measure twice! Team&rsquo;s output formula.
+                    em Posted on 01/29/17
+                li
+                    a(href='#5')
+                        img(src='img/blog/river_thumb.png', alt='Popular Post')
+                    p
+                        a(href='blog/post5') All rivers flow: dynamic approach to splitting your equity shares.
+                    em Posted on 01/15/17
+                li
+                    a(href='#4')
+                        img(src='img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                    p
+                        a(href='blog/post4') Jack of all trades or specialist?
+                    em Posted on 12/31/16
+                li
+                    a(href='#3')
+                        img(src='img/blog/agent_thumb.png', alt='Popular Post')
+                    p
+                        a(href='blog/post3') Agent provocateur
+                    em Posted on 12/16/16
+                li
+                    a(href='#2')
+                        img(src='img/blog/coffee_thumb.jpg', alt='Popular Post')
+                    p
+                        a(href='blog/post2') Minus one: your partner left the company.
+                    em Posted on 12/11/16
+                li
+                    a(href='#1')
+                        img(src='img/blog/equity_thumb.jpg', alt='Popular Post')
+                    p
+                        a(href='blog/post1') How do you share equity in your startup?
+                    em Posted on 12/04/16
+
+            .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2017 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/retina-1.1.0.js')
+        script(src='js/jquery.hoverdir.js')
+        script(src='js/jquery.hoverex.min.js')
+        script(src='js/jquery.prettyPhoto.js')
+        script(src='js/jquery.isotope.min.js')
+        script(src='js/custom.js')

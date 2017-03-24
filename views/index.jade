@@ -1,0 +1,290 @@
+extends layout
+
+block content
+  body
+    // Fixed navbar
+    //.navbar.navbar-default.navbar-fixed-top(role='navigation')
+    //  .container
+    //    #back-to-top.navbar-header
+    //      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+    //        span.sr-only Toggle navigation
+    //        span.icon-bar
+    //        span.icon-bar
+    //        span.icon-bar
+    //      a.navbar-brand(href='#back-to-top')
+    //        img#logo.pull-left(src='img/es_logo.png')
+    //    .navbar-collapse.collapse.navbar-right
+    //      ul.nav.navbar-nav
+    //        li.active
+    //          a(href='/') HOME
+    //        li
+    //          a(href='/#about') ABOUT
+    //        li
+    //          a(href='demo') DEMO
+    //        li
+    //          a(href='/#contact') CONTACT
+    //        li
+    //          a(href='blog') BLOG
+    //
+    include navbar
+    //  *****************************************************************************************************************
+        HEADERWRAP
+        *****************************************************************************************************************
+
+    #headerwrap
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1.col-sm-12.col-xs-12
+            h1 Equity-Split solution accurately converts productivity and contribution into Equity Share ownership.
+            h3 Teamwork, Clarity, Trust
+        br
+        br
+        .row
+          .col-lg-8.col-lg-offset-2.himg
+            img.img-responsive(src='img/piechart.jpg')
+            button#equityButton.centerImage.btn.btn-theme Click Here
+        // /row
+        br
+        br
+      // /container
+    // /headerwrap
+    // comment
+    //
+      *****************************************************************************************************************
+      SERVICE LOGOS
+      *****************************************************************************************************************
+    #service
+      .container
+        .row.centered
+          .col-md-4
+            i.fa.fa-pie-chart
+            h4 Equity Share Metric
+            p Equity Share algorithm is measuring ongoing work and translating it into individual share ownership. Member who works and contributes more will be rewarded more.  Algorithm accounts three contribution categories and several variables.
+          .col-md-4
+            i.fa.fa-group
+            h4 Team building
+            p Team can concentrate on building and developing business when equity share is fairly calculated. We have seen startups failing to focus on their day-to-day work due to inability to fairly and clearly articulate how to measure member&apos;s contribution. Our solution will allow your team to avoid such issues and establish teamwork from day one as everyone&grave;s input will be transparent.
+          .col-md-4
+            i.fa.fa-line-chart
+            h4 Productivity
+            p How to measure every team member  contribution and productivity? Is it initial idea or experience? Is it work done or hours spent? How to properly estimate it and reward all participants? Productivity is measured by capturing hours spent to the projects and value that each participant brings to the table.
+
+    a.anchor(name='about')
+    #about
+      .container.mtb
+        .row
+          .col-lg-6
+            img.img-responsive(src='img/agency.jpg', alt='')
+          #more-about.col-lg-6
+            h4 More About Our Team.
+            br
+            p Our team embraces virtual work environment. We are located in Los Angeles and Phoenix, USA with headquarters in Toronto, Canada.
+            p We are passionate about the entrepreneurship journey and are continuously evolving together. Our team is an open-minded group that believes in self-development, mindfulness, challenging ourselves, pushing to the limits of our intellectual capacity, having fun and awakening to any experience that life throws at us.
+            p We believe in simplicity, transparency and clear visualisation in building our software. We strive to make your life easier by using technology.
+            br
+            br
+            br
+            a.btn.btn-theme(href='mailto:team@cohesivebits.com?subject=NeedInfo') Contact Us
+        // /row
+      // /container
+    //
+      *****************************************************************************************************************
+      TEAM MEMBERS
+      *****************************************************************************************************************
+    .container.mtb
+      .row.centered
+        h3.mb MEET OUR TEAM
+
+        .col-lg-3.col-md-6.col-sm-12.col-xs-12
+          .he-wrap.tpl6
+            img(src='img/team/miroslav.jpg', alt='')
+            .he-view
+              .bg.a0(data-animate='fadeIn')
+                h3.a1(data-animate='fadeInDown') Contact Me:
+                a.dmbutton.a2(href='mailto:miroslav.tsibinog@cohesivebits.com', data-animate='fadeInUp')
+                  i.fa.fa-envelope
+                a.dmbutton.a2(href='https://twitter.com/tsibinog', data-animate='fadeInUp', target='_blank')
+                  i.fa.fa-twitter
+          h4 Miroslav Tsibinog
+          h5.ctitle Founder, CEO
+          p Ability to connect dots, see trends and patterns, talent recognition, idea generation, strategy, long-term planning and research skills. Love philosophy! My Motto: the most contrarian thing of all is not to oppose the crowd but to think for myself.
+          br
+          br
+
+        .col-lg-3.col-md-6.col-sm-12.col-xs-12
+          .he-wrap.tpl6
+            img(src='img/team/sergei.jpg', alt='')
+            .he-view
+              .bg.a0(data-animate='fadeIn')
+                h3.a1(data-animate='fadeInDown') Contact Me:
+                a.dmbutton.a2(href='mailto:sergeisqa@gmail.com', data-animate='fadeInUp')
+                  i.fa.fa-envelope
+                a.dmbutton.a2(href='https://twitter.com/sergeisqa', data-animate='fadeInUp', target='_blank')
+                  i.fa.fa-twitter
+          h4 Sergei Stadnik
+          h5.ctitle Co-Founder, LEAD QA ENGINEER
+          p Motivator and mentor, dreamer and true believer, inspired by idea of sharing knowledge with others. Software quality assurance, product testing and evaluation, process monitoring, compliance to the established standards.
+          br
+          br
+
+        .col-lg-3.col-md-6.col-sm-12.col-xs-12
+          .he-wrap.tpl6
+            img(src='img/team/arpad.jpg', alt='')
+            .he-view
+              .bg.a0(data-animate='fadeIn')
+                h3.a1(data-animate='fadeInDown') Contact Me:
+                a.dmbutton.a2(href='mailto:asztell@yahoo.com', data-animate='fadeInUp')
+                  i.fa.fa-envelope
+                a.dmbutton.a2(href='https://twitter.com/Darth_Asztalos', data-animate='fadeInUp', target='_blank')
+                  i.fa.fa-twitter
+          h4 Arpad Asztalos
+          h5.ctitle SOFTWARE DEVELOPER
+          p Pursuing a career in software development with a passion for science, programming, all things nerdy and in pursuit of problems to solve with a thirst for knowledge. Originally from Europe, currently based in Los Angeles.
+          br
+          br
+
+        .col-lg-3.col-md-6.col-sm-12.col-xs-12
+          .he-wrap.tpl6
+            img(src='img/team/unknown.png', alt='')
+            .he-view
+              .bg.a0(data-animate='fadeIn')
+                h3.a1(data-animate='fadeInDown')
+          h4 Your Name
+          h5.ctitle MOBILE APP DEVELOPER
+          p Web developer - HTML5, CSS3, JavaScript, jQuery, SQL, natural curiosity, ability to be constantly learning, burning desire to build and create.
+    br
+    br
+
+    a.anchor(name='contact')
+    #contactwrap
+    .container.mtb
+      .row
+        .col-lg-8
+          h4 We Are Looking Forward To Your Questions! Get In Touch!
+          .hline
+              p
+                // Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+              // <form role="form" id="contact_form" method="POST" action="message" onsubmit="return message();">
+              form#contact_form(role='form', method='POST', action='message')
+                .form-group
+                  label(for='contact_name') Your Name
+                  input#contact_name.form-control(type='text', name='name')
+                .form-group
+                  label(for='contact_email') Email address
+                  input#contact_email.form-control(type='email', name='email')
+                .form-group
+                  label(for='contact_subject') Subject
+                  input#contact_subject.form-control(type='text', name='subject')
+                .form-group
+                  label(for='contact_message') Message
+                  textarea#contact_message.form-control(name='message', rows='3')
+                .form-group
+                  // <a type="submit" href="mailto:team@cohesivebits.com?subject=Hiring" class="btn btn-theme">Submit</a>
+                  // <a type="submit" class="btn btn-theme">Submit</a>
+                  a.btn.btn-theme(type='submit', onclick='message()') Submit
+        .col-lg-4
+          h4 Subscribe to our newsletter!
+          .hline
+              p
+                // Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+              // <form id="subscribe_form" role="form" method="POST" action="subscribe" onsubmit="return subscribe();">
+              form#subscribe_form(role='form', method='POST', action='subscribe')
+                .form-group
+                  label(for='subscribe_email') Email address
+                  input#subscribe_email.form-control(type='email', name='email')
+                // <a type="submit" href="mailto:team@cohesivebits.com?subject=Newsletter" class="btn btn-theme">Subscribe</a>
+                a.btn.btn-theme(type='submit', onclick='subscribe()') Subscribe
+                // <a type="submit" class="btn btn-theme">Subscribe</a>
+        //
+          <div class="col-lg-4">
+          <h4>Our Address</h4>
+          <div class="hline"></div>
+          <p>
+          1234, Some Ave,<br/>
+          Toronto,<br/>
+          Canada.<br/>
+          </p>
+          <p>
+          Email: team@cohesivebits.com<br/>
+          Tel: +55 6666-7777
+          </p>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          </div>
+
+    #twrap
+      .container.centered
+        .row
+          .col-lg-8.col-lg-offset-2
+            i.fa.fa-comment-o
+            p Equity split gives a solution to a common problem startups encounter: measuring every founder involvement in the process of building a new company. You are on the right track!
+            h4
+              br
+              | John B.
+            p BUSINESS OWNER
+
+    #footerwrap
+      .container
+        .row
+          .col-lg-12
+            h4 Social Links
+            .hline-w
+            p
+              a(href='https://www.facebook.com/equitysplit/', target='_blank')
+                i.fa.fa-facebook
+              a(href='https://twitter.com/equity_split', target='_blank')
+                i.fa.fa-twitter
+              a(href='https://www.linkedin.com/company/10975490', target='_blank')
+                i.fa.fa-linkedin
+              a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+                i.fa.fa-reddit-alien
+
+      .container
+        .row.centered
+          p Copyright &copy; 2017 Cohesive Bits.
+
+    script(type='text/javascript').
+
+      function message() {
+        var $name = $('#contact_name').val();
+        var $email = $('#contact_email').val();
+        var $subject = $('#contact_subject').val();
+        var $message = $('#contact_message').val();
+
+        $.ajax({
+          method: "POST",
+          url: "http://localhost:3000/message",
+          data: {
+            name: $name,
+            email: $email,
+            subject: $subject,
+            message: $message
+          }
+        })
+        .done(function (msg) {
+          alert("Data Saved: " + msg);
+        });
+      }
+
+      function subscribe() {
+        var $email = $('#subscribe_email').val();
+
+        $.ajax({
+          method: "POST",
+          url: "http://localhost:3000/subscribe",
+          data: {
+            email: $email
+          }
+        })
+        .done(function (msg) {
+          alert("Data Saved: " + msg);
+        });
+      }
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='js/bootstrap.min.js')
+    script(src='js/retina-1.1.0.js')
+    script(src='js/jquery.hoverdir.js')
+    script(src='js/jquery.hoverex.min.js')
+    script(src='js/jquery.prettyPhoto.js')
+    script(src='js/jquery.isotope.min.js')
+    script(src='js/custom.js')

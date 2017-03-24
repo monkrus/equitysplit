@@ -1,0 +1,163 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='../img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') HOME
+                        li
+                            a(href='/#about') ABOUT
+                        li
+                            a(href='/#contact') CONTACT
+                        li.active
+                            a(href='../blog') BLOG
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    a.anchor(name='4')
+                    h3.ctitle Jack of all trades or specialist - What is my responsibility in the startup?
+                    p
+                        csmall Posted: December 31, 2016.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/dontknow.jpg')
+                    br
+                    p The holidays are coming with the smell of ginger cookies and the aroma of pine trees. It is a good time to relax, enjoy a cup of hot tea, think about what goals to achieve and what to focus your team on during next year.
+                    p What are the responsibilities of the king?
+                    p Who??? Yes, you heard it right.
+                    p The person who governs his kingdom and decides whether to declare a war or sign a peace treaty. Isn&apos;t it what exactly happens when you get a big C-type title?
+                    p Freedom comes with self-formulated rules, discipline and clearly outlined responsibilities.You know now what your boss felt when you were just an employee on your previous job. He had to keep it running 7 days a week, thinking about short time goals and long time perspectives. It&apos;s your turn to be the boss.
+                    p Here are our blocks of recommendations:
+                        ul
+                            li You can be the expert. Perhaps you are the Michael Jordan of programming, and have 100% focus on one type of work. Or you can have 3-5 different skills with around 70-80% of the expected professional expertise knowledge in each skill and become a generalist. Understand what works better for you and your teammates. Most company founders are excellent generalists.
+                            li Stick to your expertise, and always be ready to help your partner and expand your knowledge. Each person has certain skill sets and inclinations. It&apos;s reasonable to assign work to the person who will quickly deliver quality work in a certain field.
+                    p Whether you are a generalist or specialist certain rules are universal:
+                        ul
+                            li Own the project. Own your work. Concentrate all your abilities and efforts on the task at hand, not worrying about the next job or promotion. Do your work. Let your results speak for you.
+                            li
+                                | Have a clear understanding of how your application and your business will be working. It will make your everyday decisions and work prioritization easier.
+                            li
+                                | Think of the long term impact while working on your assignment. Design and outline the architecture of the whole project before starting to work on your assignment.
+                            li
+                                | Set reasonable weekly tasks. Deliver them and review what was done at the end of the week.
+                            li
+                                | Be ready to work extra hours and be flexible to work when time is available. As Benjamin Disraeli said: &ldquo;Action may not always bring happiness; but there is no happiness without action&rdquo;.
+                            li
+                                | It&apos;s not only adding new work that adds results. The elimination of non-essentials from your &ldquo;to-do-list&rdquo; is a vital factor in great achievement. Do what is essential &mdash; because most of what we say and do is not essential. Focus on work that matters and produces results. Nothing is worth doing pointlessly.
+                            li
+                                | Don&grave;t be afraid to learn new concepts. Implement new technologies. Why not if it saves time and makes your product better.
+                            li
+                                | Even if it goes against the mainstream of  a typical startup. What is a typical startup anyway?
+                    p
+                        | And, lastly: do not try to behave like a tyrant. Look for your own progress, not others&rsquo; mistakes.
+                    p
+                        | Do not aim for absolute monarchy,  too much  control historically has ended up in  revolution and the overthrowing of the ruling house.
+                    p
+                        strong
+                            | Are you generalist or specialist? How do you decide what tasks you should be working on?
+                    p
+                        | Have a warm holiday season!
+                        br
+                        | Happy New Year!
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

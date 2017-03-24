@@ -1,0 +1,278 @@
+extends layout
+
+block append head
+
+    link(href='/css/demo.css', rel='stylesheet')
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/moment.min.js')
+    script(type='text/javascript', src='/js/bootstrap-datepicker.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript', src='/js/calculate_share.js')
+    script(type='text/javascript', src='/js/display_share.js')
+
+block content
+    body(onload='loadBody()', onresize='resizeChart()')
+        include navbar
+
+        script.
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        // Fixed navbar
+        //.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        //    .container
+        //        .navbar-header
+        //            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        //                span.sr-only Toggle navigation
+        //                span.icon-bar
+        //                span.icon-bar
+        //                span.icon-bar
+        //            a.navbar-brand(href='#back-to-top')
+        //                img#logo.pull-left(src='img/es_full_logo_bg.png')
+        //        .navbar-collapse.collapse.navbar-right
+        //            ul.nav.navbar-nav
+        //                li
+        //                    a(href='/') HOME
+        //                li
+        //                    a(href='/#about') ABOUT
+        //                li.active
+        //                    a(href='demo') DEMO
+        //                li
+        //                    a(href='/#contact') CONTACT
+        //                li
+        //                    a(href='blog') BLOG
+
+        br
+        br
+        br
+        br
+        h1.centered Equity Split Calculation
+        form#calculateform_id(name='calculateform_name', method='post', onsubmit='return false;')
+            div
+                .bs-example
+                    table.table.table-bordered
+                        thead
+                            tr.info
+                                th
+                                th
+                                    h4 Member A
+                                th
+                                    h4 Member B
+                                th
+                                    h4 Member C
+                                th
+                                    h4 Member D
+                        tr.active
+                            th Name
+                            td
+                                .input-group
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-user
+                                    input.form-control(type='text', placeholder='name', name='member1_name')
+                            td
+                                .input-group
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-user
+                                    input.form-control(type='text', placeholder='name', name='member2_name')
+                            td
+                                .input-group
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-user
+                                    input.form-control(type='text', placeholder='name', name='member3_name')
+                            td
+                                .input-group
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-user
+                                    input.form-control(type='text', placeholder='name', name='member4_name')
+                        tr.active
+                            th Opportunity Cost / Salary
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member1_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member1_ocs', value='100,000', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member2_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member2_ocs', value='100,000', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member3_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member3_ocs', value='100,000', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member4_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member4_ocs', value='100,000', required='required')
+                        tr.active
+                            th Hours Worked
+                            td
+                                .input-group
+                                    span.input-group-addon #
+                                    input#member1_hw_id.form-control(type='text', name='member1_hw', onkeypress='return inputNumber(event);', value='30', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon #
+                                    input#member2_hw_id.form-control(type='text', name='member2_hw', onkeypress='return inputNumber(event);', value='40', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon #
+                                    input#member3_hw_id.form-control(type='text', name='member3_hw', onkeypress='return inputNumber(event);', value='50', required='required')
+                            td
+                                .input-group
+                                    span.input-group-addon #
+                                    input#member4_hw_id.form-control(type='text', name='member4_hw', onkeypress='return inputNumber(event);', value='60', required='required')
+                        tr.active
+                            th Invested Cash
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member1_ic_id.form-control(type='text', name='member1_ic', value='0', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member2_ic_id.form-control(type='text', name='member2_ic', value='0', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member3_ic_id.form-control(type='text', name='member3_ic', value='0', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member4_ic_id.form-control(type='text', name='member4_ic', value='0', onkeypress='return inputNumber(event);')
+                        tr.active
+                            th Contributed Cash
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member1_cc_id.form-control(type='text', name='member1_cc', value='500', required='required', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member2_cc_id.form-control(type='text', name='member2_cc', value='600', required='required', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member3_cc_id.form-control(type='text', name='member3_cc', value='750', required='required', onkeypress='return inputNumber(event);')
+                            td
+                                .input-group
+                                    span.input-group-addon $
+                                    input#member4_cc_id.form-control(type='text', name='member4_cc', value='1,000', required='required', onkeypress='return inputNumber(event);')
+                        tr.active
+                            th Date Joined The Project
+                            td
+                                #member1_datetimepicker.input-group.date
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-calendar
+                                    input.form-control(type='text', min='0', name='member1_djtp', placeholder='yyyy/mm/dd')
+                            td
+                                #member2_datetimepicker.input-group.date
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-calendar
+                                    input.form-control(type='text', min='0', name='member2_djtp', placeholder='yyyy/mm/dd')
+                            td
+                                #member3_datetimepicker.input-group.date
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-calendar
+                                    input.form-control(type='text', min='0', name='member3_djtp', placeholder='yyyy/mm/dd')
+                            td
+                                #member4_datetimepicker.input-group.date
+                                    span.input-group-addon
+                                        span.glyphicon.glyphicon-calendar
+                                    input.form-control(type='text', min='0', name='member4_djtp', placeholder='yyyy/mm/dd')
+                        tr.success
+                            th Your Share ($)
+                            td
+                                input.blue-color.form-control(type='text', name='member1_ysc', disabled='')
+                            td
+                                input.red-color.form-control(type='text', name='member2_ysc', disabled='')
+                            td
+                                input.orange-color.form-control(type='text', name='member3_ysc', disabled='')
+                            td
+                                input.green-color.form-control(type='text', name='member4_ysc', disabled='')
+                        tr.success
+                            th Your Share (%)
+                            td
+                                input.blue-color.form-control(type='text', name='member1_ysp', disabled='')
+                            td
+                                input.red-color.form-control(type='text', name='member2_ysp', disabled='')
+                            td
+                                input.orange-color.form-control(type='text', name='member3_ysp', disabled='')
+                            td
+                                input.green-color.form-control(type='text', name='member4_ysp', disabled='')
+                        tr.success
+                            th Total Share (#)
+                            td(colspan='4')
+                                b
+                                    input.form-control.centered(type='text', name='totalshare', disabled='')
+
+        .CalculationBut
+            input.btn.btn-theme.calculationID(type='submit', name='calculationID', value='Calculation', onclick='calculation(calculateform_id)')
+            input.btn.btn-theme.calculationID(type='button', name='resetID', value='Reset', onclick='resetData(calculateform_id)')
+        #graph_id.bs-example
+            table.table.table-bordered
+                tbody
+                    tr
+                        td
+                            h4.centered Equity Split
+                            #pieChartContainer.chart-config
+                        td
+                            h4.centered Equity Split
+                            #barChartContainer.chart-config
+        br
+        .bs-example
+            table.table.table-bordered
+                tbody
+                    tr
+                        td
+                            #disqus_thread
+                            script.
+                                /**
+                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                var disqus_config = function () {
+                                    this.page.url = "http://www.equity-split.com/";  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = "equity-split"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                (function () {// DON'T EDIT BELOW THIS LINE
+                                    var d = document,
+                                        s = d.createElement('script');
+                                    s.src = 'https://equity-split.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            noscript Please enable JavaScript to view the
+                                a(href='https://disqus.com/?ref_noscript') comments powered by Disqus.
+        br
+        br
+        br
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/', target='_blank')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split', target='_blank')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490', target='_blank')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+                                i.fa.fa-reddit-alien
+            .container
+                .row.centered
+                    p Copyright &copy; 2017 Cohesive Bits.
+
+        script#dsq-count-scr(src='//equity-split.disqus.com/count.js', async='')
+        script(src='/js/retina-1.1.0.js')
+        script(src='/js/jquery.hoverdir.js')
+        script(src='/js/jquery.hoverex.min.js')
+        script(src='/js/jquery.prettyPhoto.js')
+        script(src='/js/jquery.isotope.min.js')
+        script(src='/js/custom.js')

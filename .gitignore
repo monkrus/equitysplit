@@ -1,4 +1,4 @@
-#node_modules
+node_modules
 .idea
 config
 html_views
@@ -6,3 +6,4 @@ initial_jade_views
 pug_views
 hbs_views
 npm-debug.log
+.env

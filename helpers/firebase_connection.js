@@ -5,7 +5,7 @@ var firebase = require("firebase");
 var fs       = require('fs');
 var jsonfile = require('jsonfile');
 var beautify = require("json-beautify");
-var dotenv   = require('dotenv');
+// require('dotenv').config();
 
 // var firebase_credentials = require("../config/firebase_credentials.json");
 

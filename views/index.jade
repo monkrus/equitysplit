@@ -252,7 +252,8 @@ block content
 
         $.ajax({
           method: "POST",
-          url: "http://localhost:3000/message",
+          // url: "http://localhost:3000/message",
+          url: "https://equitysplit.herokuapp.com/message",
           data: {
             name: $name,
             email: $email,
@@ -270,7 +271,8 @@ block content
 
         $.ajax({
           method: "POST",
-          url: "http://localhost:3000/subscribe",
+          // url: "http://localhost:3000/subscribe",
+          url: "https://equitysplit.herokuapp.com/subscribe",
           data: {
             email: $email
           }

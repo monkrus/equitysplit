@@ -1,15 +1,18 @@
 /**
+ * Created by equitysplit on 3/25/17.
+ */
+/**
  * Created by krutoy on 3/19/17.
  */
-var firebase = require("firebase");
-var fs       = require('fs');
-var jsonfile = require('jsonfile');
-var beautify = require("json-beautify");
+const firebase = require("firebase");
+const fs       = require('fs');
+const jsonfile = require('jsonfile');
+const beautify = require("json-beautify");
 // require('dotenv').config();
 
 // var firebase_credentials = require("../config/firebase_credentials.json");
 
-var config = {
+const config = {
     // apiKey:             firebase_credentials.apiKey,
     // authDomain:         firebase_credentials.authDomain,
     // databaseURL:        firebase_credentials.databaseURL,
@@ -25,6 +28,7 @@ firebase.initializeApp(config);
 
 
 module.exports = {
+
     saveMessage: function(name, email, subject, message) {
 
         firebase.database().ref('messages/').push({
@@ -36,25 +40,10 @@ module.exports = {
             utc: new Date().getTime()
         });
 
-        return firebase.database().ref('/messages/').orderByChild('utc').once('value').then(function(snapshot) {
-            console.log(snapshot.val());
-            // console.log(typeof snapshot.val());
-
-            fs.writeFile("./helpers/messages.txt", JSON.stringify(snapshot.val()), function(err) {
-                if(err) {
-                    return console.log(err);
-                }
-                console.log("File saved successfully!");
-            });
-
-            jsonfile.writeFile('./helpers/messages.json', snapshot.val(), function (err) {
-                console.log('running the writeFile');
-                console.error(err);
-            })
-
-        });
+        this.getMessages();
 
     },
+
     subscribe: function(email) {
 
         firebase.database().ref('subscribers/').push({
@@ -63,25 +52,8 @@ module.exports = {
             utc: new Date().getTime()
         });
 
-        return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
-            console.log(snapshot.val());
+        this.getSubscribers();
 
-            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
-            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
-
-            fs.writeFile("./helpers/subscribers.text", JSON.stringify(snapshot.val()), function(err) {
-                if(err) {
-                    return console.log(err);
-                }
-                console.log("File saved successfully!");
-            });
-
-            jsonfile.writeFile('./helpers/subscribers.json', snapshot.val(), function (err) {
-                console.log('running the subscribe');
-                console.error(err)
-            });
-
-        });
     },
 
     test: function() {
@@ -89,6 +61,59 @@ module.exports = {
             console.log('running the subscribe');
             console.error(err)
         });
+    },
+
+    getMessages: function(callback) {
+
+        // return firebase.database().ref('/messages/').orderByChild('utc').once('value').then(function(snapshot) {
+        firebase.database().ref('/messages/').orderByChild('utc').once('value').then(function(snapshot) {
+            // console.log(snapshot.val());
+            // console.log(typeof snapshot.val());
+
+            fs.writeFile("./helpers/messages.txt", JSON.stringify(snapshot.val()), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                // console.log("File saved successfully!");
+            });
+
+            jsonfile.writeFile('./helpers/messages.json', snapshot.val(), function (err) {
+                console.log('running the writeFile');
+                console.error(err);
+            });
+
+            callback(snapshot.val());
+
+        });
+
+    },
+
+    getSubscribers: function(callback) {
+
+        // return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
+        firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
+            // console.log(snapshot.val());
+
+            // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
+            // console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
+
+            fs.writeFile("./helpers/subscribers.text", JSON.stringify(snapshot.val()), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+                // console.log("File saved successfully!");
+            });
+
+            jsonfile.writeFile('./helpers/subscribers.json', snapshot.val(), function (err) {
+                console.log('running the subscribe');
+                console.error(err)
+            });
+
+            callback(snapshot.val());
+
+        });
+
     }
+
 };
 

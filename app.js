@@ -1,21 +1,20 @@
 require('dotenv').config();
-var express         = require('express');
-var path            = require('path');
-var favicon         = require('serve-favicon');
-var logger          = require('morgan');
-var cookieParser    = require('cookie-parser');
-var bodyParser      = require('body-parser');
-var HTMLing         = require('htmling');
-var handlebars      = require('express-handlebars');
-// var pug             = require('pug');
+const express         = require('express');
+const path            = require('path');
+const favicon         = require('serve-favicon');
+const logger          = require('morgan');
+const cookieParser    = require('cookie-parser');
+const bodyParser      = require('body-parser');
+// const HTMLing         = require('htmling');
+const handlebars      = require('express-handlebars');
 
-var index           = require('./routes/index');
-var blog            = require('./routes/blog');
-var demo            = require('./routes/demo');
-var updates         = require('./routes/updates');
-// var users           = require('./routes/users');
+const index           = require('./routes/index');
+const blog            = require('./routes/blog');
+const demo            = require('./routes/demo');
+const admin         = require('./routes/admin');
+// const users           = require('./routes/users');
 
-var app             = express();
+const app             = express();
 
 
 // // This is to be used with the htmling view engine
@@ -46,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/blog', blog);
 app.use('/demo', demo);
-app.use('/updates', updates);
+app.use('/admin', admin);
 app.use('/', index);
 // app.use('/users', users);
 

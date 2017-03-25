@@ -25,6 +25,7 @@
     "mysql": "^2.13.0",
     "passport": "^0.3.2",
     "pg": "^6.1.5",
+    "promise": "^7.1.1",
     "pug": "^2.0.0-beta11",
     "sequelize": "^3.30.2",
     "serve-favicon": "~2.3.2"

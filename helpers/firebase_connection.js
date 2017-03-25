@@ -64,7 +64,10 @@ module.exports = {
         });
 
         return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
+
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
+            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
 
             fs.writeFile("./helpers/subscribers.text", JSON.stringify(snapshot.val()), function(err) {
                 if(err) {

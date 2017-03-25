@@ -6,4 +6,4 @@ initial_jade_views
 pug_views
 hbs_views
 npm-debug.log
-.env
+#.env

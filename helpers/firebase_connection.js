@@ -48,7 +48,8 @@ module.exports = {
             });
 
             jsonfile.writeFile('./messages.json', snapshot.val(), function (err) {
-                console.error(err)
+                console.log('running the writeFile');
+                console.error(err);
             })
 
         });
@@ -73,6 +74,7 @@ module.exports = {
             });
 
             jsonfile.writeFile('./subscribers.json', snapshot.val(), function (err) {
+                console.log('running the subscribe');
                 console.error(err)
             });
 

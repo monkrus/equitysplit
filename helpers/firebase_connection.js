@@ -47,7 +47,7 @@ module.exports = {
                 console.log("File saved successfully!");
             });
 
-            jsonfile.writeFile('./messages.json', snapshot.val(), function (err) {
+            jsonfile.writeFile('./helpers/messages.json', snapshot.val(), function (err) {
                 console.log('running the writeFile');
                 console.error(err);
             })
@@ -73,11 +73,18 @@ module.exports = {
                 console.log("File saved successfully!");
             });
 
-            jsonfile.writeFile('./subscribers.json', snapshot.val(), function (err) {
+            jsonfile.writeFile('./helpers/subscribers.json', snapshot.val(), function (err) {
                 console.log('running the subscribe');
                 console.error(err)
             });
 
+        });
+    },
+
+    test: function() {
+        jsonfile.writeFile('./helpers/subscribers.json', {stuff:'thing'}, function (err) {
+            console.log('running the subscribe');
+            console.error(err)
         });
     }
 };

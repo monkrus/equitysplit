@@ -1,0 +1,52 @@
+//
+   Created by equitysplit on 3/25/17.
+
+//
+   Created by equitysplit on 3/25/17.
+
+extends ../layout
+
+block content
+    body
+        include ../navbar
+        #headerwrap
+            .container
+                .row
+                    .col-lg-12
+                        div(style='margin-top:50px;')
+                        form(action='/admin/messages', method='get')
+                            .btn-group(role='group')
+                                button.btn.btn-default(type='submit') Messages
+                                button.btn.btn-default.disabled(type='button') Subscribers
+                        h3 Subscribers
+                        table#subscriptions_table.table.table-condensed.table-hover.table-bordered.table-responsive(style='background-color:white;')
+                            thead
+                                tr
+                                    th Email
+                                    th Date
+                            tbody
+                                for subscriber in subscribers
+                                    tr
+                                        td= subscriber.email
+                                        td= subscriber.created_at
+                        div(style='margin-top:150px;')
+
+        #footerwrap
+                .container
+                    .row
+                        .col-lg-12
+                            h4 Social Links
+                            .hline-w
+                            p
+                                a(href='https://www.facebook.com/equitysplit/', target='_blank')
+                                    i.fa.fa-facebook
+                                a(href='https://twitter.com/equity_split', target='_blank')
+                                    i.fa.fa-twitter
+                                a(href='https://www.linkedin.com/company/10975490', target='_blank')
+                                    i.fa.fa-linkedin
+                                a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+                                    i.fa.fa-reddit-alien
+
+                .container
+                    .row.centered
+                        p Copyright &copy; 2017 Cohesive Bits.

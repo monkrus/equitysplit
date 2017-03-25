@@ -2,9 +2,11 @@
  * Created by krutoy on 3/19/17.
  */
 var firebase = require("firebase");
-var fs = require('fs');
+var fs       = require('fs');
 var jsonfile = require('jsonfile');
 var beautify = require("json-beautify");
+var dotenv   = require('dotenv');
+
 // var firebase_credentials = require("../config/firebase_credentials.json");
 
 var config = {

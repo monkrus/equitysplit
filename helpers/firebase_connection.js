@@ -37,7 +37,7 @@ module.exports = {
         });
 
         return firebase.database().ref('/messages/').orderByChild('utc').once('value').then(function(snapshot) {
-            // console.log(snapshot.val());
+            console.log(snapshot.val());
             // console.log(typeof snapshot.val());
 
             fs.writeFile("./helpers/messages.txt", JSON.stringify(snapshot.val()), function(err) {
@@ -47,7 +47,7 @@ module.exports = {
                 console.log("File saved successfully!");
             });
 
-            jsonfile.writeFile('./helpers/messages.json', snapshot.val(), function (err) {
+            jsonfile.writeFile('./messages.json', snapshot.val(), function (err) {
                 console.error(err)
             })
 
@@ -63,7 +63,7 @@ module.exports = {
         });
 
         return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
-            // console.log(snapshot.val());
+            console.log(snapshot.val());
 
             fs.writeFile("./helpers/subscribers.text", JSON.stringify(snapshot.val()), function(err) {
                 if(err) {
@@ -72,7 +72,7 @@ module.exports = {
                 console.log("File saved successfully!");
             });
 
-            jsonfile.writeFile('./helpers/subscribers.json', snapshot.val(), function (err) {
+            jsonfile.writeFile('./subscribers.json', snapshot.val(), function (err) {
                 console.error(err)
             });
 

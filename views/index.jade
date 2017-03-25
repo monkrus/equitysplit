@@ -252,8 +252,8 @@ block content
 
         $.ajax({
           method: "POST",
-          // url: "http://localhost:3000/message",
-          url: "https://equitysplit.herokuapp.com/message",
+          url: "http://localhost:3000/message",
+          //url: "https://equitysplit.herokuapp.com/message",
           data: {
             name: $name,
             email: $email,
@@ -262,7 +262,7 @@ block content
           }
         })
         .done(function (msg) {
-        // alert("Data Saved: " + msg);
+        // console.log("Data Saved: " + msg);
         });
       }
 
@@ -271,14 +271,14 @@ block content
 
         $.ajax({
           method: "POST",
-          // url: "http://localhost:3000/subscribe",
-          url: "https://equitysplit.herokuapp.com/subscribe",
+          url: "http://localhost:3000/subscribe",
+          //url: "https://equitysplit.herokuapp.com/subscribe",
           data: {
             email: $email
           }
         })
         .done(function (msg) {
-        // alert("Data Saved: " + msg);
+        // console.log("Data Saved: " + msg);
         });
       }
 

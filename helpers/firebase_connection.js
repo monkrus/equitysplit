@@ -64,7 +64,7 @@ module.exports = {
         });
 
         return firebase.database().ref('/subscribers/').orderByChild('utc').once('value').then(function(snapshot) {
-            // console.log(snapshot.val());
+            console.log(snapshot.val());
 
             console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');
             console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>');

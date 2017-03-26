@@ -3,21 +3,26 @@
 
 extends ../layout
 
+block append head
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(src='/js/table.js' type='text/javascript')
+    script(src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js' type='text/javascript')
+    link(href='https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css' rel='stylesheet')
+
 block content
-    body
+    body(style='margin-bottom:0;')
         include ../navbar
-        #headerwrap
+        #headerwrap(style='height:100%;')
             .container
                 .row
                     .col-lg-12
                         div(style='margin-top:50px;')
-                            form(action='/admin/subscribers', method='get')
-                                .btn-group(role='group')
-                                    button.btn.btn-default.disabled(type='button') Messages
-                                    button.btn.btn-default(type='submit') Subscribers
-                        h3 Messages
-                        //table#messages_table.table.table-condensed.table-hover.table-bordered.table-responsive(style='background-color:white;')
-                        table#messages_table.table.table-hover.table-bordered.table-responsive(style='background-color:white;')
+                        form(action='/admin/subscribers', method='get', style='margin-bottom:50px;')
+                            .btn-group(role='group')
+                                button.btn.btn-default.disabled(type='button') Messages
+                                button.btn.btn-default(type='submit') Subscribers
+                        h3.text-left(style='margin-bottom:30px;') Messages
+                        table#messages_table.table.table-hover.table-bordered.table-responsive(style='background-color:white;border-collapse:collapse;')
                             thead
                                 tr
                                     th Email
@@ -27,29 +32,16 @@ block content
                                     //th Message
                             tbody
                                 for message in messages
+                                    //tr.accordion(data-toggle='collapse', data-target='.hidden-message')
                                     tr
-                                        td= message.email
-                                        td= message.name
-                                        td= message.subject
-                                        td= message.created_at
-                                        //td= message.message
+                                        td.tdvisible= message.email
+                                        td.tdvisible= message.name
+                                        td.tdvisible= message.subject
+                                        td.tdvisible= message.created_at
+                                    //tr.collapse.hidden-message(style='display:none;')
+                                    //tr.collapse.hidden-message
+                                    tr
+                                        //tr.collapse.hidden-message(style='display:none !important;')
+                                        //td(colspan='4', style='border-bottom: solid black thin;')= message.message
+                                        td= message.message
                         div(style='margin-top:150px;')
-
-        #footerwrap
-            .container
-                .row
-                    .col-lg-12
-                        h4 Social Links
-                        .hline-w
-                        p
-                            a(href='https://www.facebook.com/equitysplit/', target='_blank')
-                                i.fa.fa-facebook
-                            a(href='https://twitter.com/equity_split', target='_blank')
-                                i.fa.fa-twitter
-                            a(href='https://www.linkedin.com/company/10975490', target='_blank')
-                                i.fa.fa-linkedin
-                            a(href='https://www.reddit.com/user/equity_split/', target='_blank')
-                                i.fa.fa-reddit-alien
-            .container
-                .row.centered
-                    p Copyright &copy; 2017 Cohesive Bits.

@@ -3,10 +3,16 @@
 
 extends ../layout
 
+block append head
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(src='/js/table.js' type='text/javascript')
+    script(src='https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js' type='text/javascript')
+    link(href='https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css' rel='stylesheet')
+
 block content
-    body
+    body(style='margin-bottom:0;')
         include ../navbar
-        #headerwrap
+        #headerwrap(style='height:100%')
             .container
                 .row
                     .col-lg-12
@@ -16,7 +22,6 @@ block content
                                 button.btn.btn-default(type='submit') Messages
                                 button.btn.btn-default.disabled(type='button') Subscribers
                         h3 Subscribers
-                        //table#subscriptions_table.table.table-condensed.table-hover.table-bordered.table-responsive(style='background-color:white;')
                         table#subscriptions_table.table.table-hover.table-bordered.table-responsive(style='background-color:white;')
                             thead
                                 tr
@@ -28,22 +33,3 @@ block content
                                         td= subscriber.email
                                         td= subscriber.created_at
                         div(style='margin-top:150px;')
-
-        #footerwrap
-            .container
-                .row
-                    .col-lg-12
-                        h4 Social Links
-                        .hline-w
-                        p
-                            a(href='https://www.facebook.com/equitysplit/', target='_blank')
-                                i.fa.fa-facebook
-                            a(href='https://twitter.com/equity_split', target='_blank')
-                                i.fa.fa-twitter
-                            a(href='https://www.linkedin.com/company/10975490', target='_blank')
-                                i.fa.fa-linkedin
-                            a(href='https://www.reddit.com/user/equity_split/', target='_blank')
-                                i.fa.fa-reddit-alien
-            .container
-                .row.centered
-                    p Copyright &copy; 2017 Cohesive Bits.

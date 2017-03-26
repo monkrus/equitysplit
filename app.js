@@ -11,6 +11,7 @@ const handlebars      = require('express-handlebars');
 const index           = require('./routes/index');
 const blog            = require('./routes/blog');
 const demo            = require('./routes/demo');
+const demo2            = require('./routes/demo2');
 const admin         = require('./routes/admin');
 // const users           = require('./routes/users');
 
@@ -45,13 +46,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/blog', blog);
 app.use('/demo', demo);
+app.use('/demo2', demo2);
 app.use('/admin', admin);
 app.use('/', index);
 // app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });

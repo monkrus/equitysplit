@@ -16,12 +16,14 @@ block content
             .container
                 .row
                     .col-lg-12
-                        div(style='margin-top:50px;')
-                        form(action='/admin/messages', method='get')
+                        //div(style='margin-top:50px;')
+                        form.pull-left(action='/admin/messages', method='get', style='margin-bottom:50px;')
                             .btn-group(role='group')
                                 button.btn.btn-default(type='submit') Messages
                                 button.btn.btn-default.disabled(type='button') Subscribers
-                        h3 Subscribers
+                    .col-lg-12
+                        h3.text-left(style='margin-bottom:30px;') Subscribers
+                    .col-lg-12
                         table#subscriptions_table.table.table-hover.table-bordered.table-responsive(style='background-color:white;')
                             thead
                                 tr

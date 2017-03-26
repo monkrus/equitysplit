@@ -16,12 +16,14 @@ block content
             .container
                 .row
                     .col-lg-12
-                        div(style='margin-top:50px;')
-                        form(action='/admin/subscribers', method='get', style='margin-bottom:50px;')
+                        //div(style='margin-top:50px;')
+                        form.pull-left(action='/admin/subscribers', method='get', style='margin-bottom:50px;')
                             .btn-group(role='group')
                                 button.btn.btn-default.disabled(type='button') Messages
                                 button.btn.btn-default(type='submit') Subscribers
+                    .col-lg-12
                         h3.text-left(style='margin-bottom:30px;') Messages
+                    .col-lg-12
                         table#messages_table.table.table-hover.table-bordered.table-responsive(style='background-color:white;border-collapse:collapse;')
                             thead
                                 tr
@@ -38,10 +40,11 @@ block content
                                         td.tdvisible= message.name
                                         td.tdvisible= message.subject
                                         td.tdvisible= message.created_at
-                                    //tr.collapse.hidden-message(style='display:none;')
-                                    //tr.collapse.hidden-message
-                                    tr
+                                        //td.tdvisible= message.message
+                                        //tr.collapse.hidden-message(style='display:none;')
+                                        //tr.collapse.hidden-message
+                                        //tr
                                         //tr.collapse.hidden-message(style='display:none !important;')
                                         //td(colspan='4', style='border-bottom: solid black thin;')= message.message
-                                        td= message.message
+                                        //td(colspan='4')= message.message
                         div(style='margin-top:150px;')

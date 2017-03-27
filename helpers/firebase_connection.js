@@ -31,13 +31,15 @@ module.exports = {
 
     saveMessage: function(name, email, subject, message) {
 
+        let current_time = new Date().getTime();
+
         firebase.database().ref('messages/').push({
             name: name,
             email: email,
             subject: subject,
             message: message,
             created_at : new Date().toLocaleString(),
-            utc: new Date().getTime()
+            utc: current_time+25200000
         });
 
         this.getMessages();
@@ -46,10 +48,12 @@ module.exports = {
 
     subscribe: function(email) {
 
+        let current_time = new Date().getTime();
+
         firebase.database().ref('subscribers/').push({
             email: email,
             created_at : new Date().toLocaleString(),
-            utc: new Date().getTime()
+            utc: current_time+25200000
         });
 
         this.getSubscribers();

@@ -2,35 +2,10 @@ extends layout
 
 block content
   body
-    // Fixed navbar
-    //.navbar.navbar-default.navbar-fixed-top(role='navigation')
-    //  .container
-    //    #back-to-top.navbar-header
-    //      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-    //        span.sr-only Toggle navigation
-    //        span.icon-bar
-    //        span.icon-bar
-    //        span.icon-bar
-    //      a.navbar-brand(href='#back-to-top')
-    //        img#logo.pull-left(src='img/es_logo.png')
-    //    .navbar-collapse.collapse.navbar-right
-    //      ul.nav.navbar-nav
-    //        li.active
-    //          a(href='/') HOME
-    //        li
-    //          a(href='/#about') ABOUT
-    //        li
-    //          a(href='demo') DEMO
-    //        li
-    //          a(href='/#contact') CONTACT
-    //        li
-    //          a(href='blog') BLOG
-    //
     include navbar
     //  *****************************************************************************************************************
         HEADERWRAP
         *****************************************************************************************************************
-
     #headerwrap
       .container
         .row
@@ -43,12 +18,8 @@ block content
           .col-lg-8.col-lg-offset-2.himg
             img.img-responsive(src='img/piechart.jpg')
             button#equityButton.centerImage.btn.btn-theme Click Here
-        // /row
         br
         br
-      // /container
-    // /headerwrap
-    // comment
     //
       *****************************************************************************************************************
       SERVICE LOGOS
@@ -85,8 +56,6 @@ block content
             br
             br
             a.btn.btn-theme(href='mailto:team@cohesivebits.com?subject=NeedInfo') Contact Us
-        // /row
-      // /container
     //
       *****************************************************************************************************************
       TEAM MEMBERS
@@ -195,21 +164,6 @@ block content
                 // <a type="submit" href="mailto:team@cohesivebits.com?subject=Newsletter" class="btn btn-theme">Subscribe</a>
                 a.btn.btn-theme(type='submit', onclick='subscribe()') Subscribe
                 // <a type="submit" class="btn btn-theme">Subscribe</a>
-        //
-          <div class="col-lg-4">
-          <h4>Our Address</h4>
-          <div class="hline"></div>
-          <p>
-          1234, Some Ave,<br/>
-          Toronto,<br/>
-          Canada.<br/>
-          </p>
-          <p>
-          Email: team@cohesivebits.com<br/>
-          Tel: +55 6666-7777
-          </p>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-          </div>
 
     #twrap
       .container.centered
@@ -254,6 +208,7 @@ block content
           method: "POST",
           //url: "http://localhost:3000/message",
           url: "https://equitysplit.herokuapp.com/message",
+          //url: "https://equitysplit.herokuapp.com/message",
           data: {
             name: $name,
             email: $email,
@@ -273,6 +228,7 @@ block content
           method: "POST",
           //url: "http://localhost:3000/subscribe",
           url: "https://equitysplit.herokuapp.com/subscribe",
+          //url: "https://equitysplit.herokuapp.com/subscribe",
           data: {
             email: $email
           }

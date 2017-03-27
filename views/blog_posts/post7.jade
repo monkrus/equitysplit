@@ -1,303 +1,171 @@
+extends ../layout
 
+block content
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="ico/favicon.ico">
-
-    <title>Equity Split</title>
-    <meta property="og:url" content="http://www.equity-split.com/blog.html">
-    <meta property="og:description" content="startup entrepreneur equity">
-    <meta property="og:description" content="startup entrepreneur equity">
-    <meta name="author" content="Arpad Asztalos">
-    <meta property="og:image" content="http://s11.postimg.org/5qh4fb3g3/equity_split.png">
-
-    <link href="../css/bootstrap.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-
-    <!--[if lt IE 9]><script src="../../js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="js/modernizr.js"></script>
-
-</head>
-
-<body>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#back-to-top" class="navbar-brand" ><img class="pull-left" id="logo" src="../img/es_full_logo_bg.png"></a>
-        </div>
-        <div class="navbar-collapse collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/#about">ABOUT</a></li>
-                <li><a href="/#contact">CONTACT</a></li>
-                <li class="active"><a href="../blog">BLOG</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</div>
-
-<!-- *****************************************************************************************************************
- BLUE WRAP
- ***************************************************************************************************************** -->
-<div id="blue">
-    <div class="container">
-        <div class="row">
-            <h3>Blog List.</h3>
-        </div><!-- /row -->
-    </div> <!-- /container -->
-</div><!-- /blue -->
-
-
-<!-- *****************************************************************************************************************
- BLOG CONTENT
- ***************************************************************************************************************** -->
-
-<div class="container mtb">
-    <div class="row">
-        <!-- BLOG POSTS LIST -->
-        <div class="col-lg-8">
-
-
-
-            <!--<a href="https://www.reddit.com/submit" class="reddit-share-button" onclick="window.location = 'https://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false">-->
-            <!--<img src="https://www.redditstatic.com/spreddit13.gif" alt="submit to reddit" border="0" />-->
-            <!--</a>-->
-
-            <!--<a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>-->
-            <!--<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-
-            <!--<div class="fb-share-button" data-href="http://www.equity-split.com/blog.html" data-layout="button" data-size="large" data-mobile-iframe="true">-->
-            <!--<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.equity-split.com%2Fblog.html&amp;src=sdkpreparse">Share</a>-->
-            <!--</div>-->
-
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01"></script>
-            <!--<script src="https://platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>-->
-            <!--<script type="IN/Share" data-size="large" data-url="http://www.equity-split.com/blog.html"></script>-->
-
-            <!-- Load Facebook SDK for JavaScript -->
-            <!--<div id="fb-root"></div>-->
-            <!--<script>(function(d, s, id) {-->
-            <!--var js, fjs = d.getElementsByTagName(s)[0];-->
-            <!--if (d.getElementById(id)) return;-->
-            <!--js = d.createElement(s); js.id = id;-->
-            <!--js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1";-->
-            <!--fjs.parentNode.insertBefore(js, fjs);-->
-            <!--}(document, 'script', 'facebook-jssdk'));</script>-->
-
-            <!-- Your share button code -->
-            <!--<div class="fb-share-button"-->
-            <!--data-href="https://www.equity-split.com/blog.html"-->
-            <!--data-layout="button_count">-->
-            <!--</div>-->
-
-
-            <!--<div class="hline"></div>-->
-
-
-
-
-            <!-- Blog Post 7 -->
-            <a name="7" class="anchor"></a>
-            <h3 class="ctitle">Probation period for new employee</h3>
-            <p><csmall>Posted: February 1, 2017.</csmall> | <csmall2>By: Sergei Stadnik</csmall2></p><br>
-            <p><img class="img-responsive" src="../img/blog/stick_figures.png"></p><br>
-            <p>Reading time: <strong>4 minutes</strong></p><br>
-            <p>The day when a new member becomes a part of the team and starts contributing is an exciting moment for this person. The newcomer typically  is very enthusiastic and anxious to add value. He / she has new ideas and views. It is critical to see how a prospective partner / teammate will fit in and able to work with the existing team.</p>
-            <p><strong>How to avoid the recruiting gamble and be confident about new  hire?</strong></p>
-            <p>The probation period is a time of finding out who the person really is. No matter how great the first impression was during the interview, you will not know the true character and behaviours of the person until you worked together for some time. Typically, the probation period of 3-6 months is a good indicator of what to expect from an individual. It is a good portion of time to evaluate the potential and hidden caveats. Based on personal experience, a 2-3 month period is good enough for a person to fully reveal himself/herself.</p>
-            <p>Why do you need a probational period? Here are some real startup examples:</p>
-            <p><strong>Situation A</strong>: John was a member of the ”Starbucks club” before the startup was even formed. He was discussing the ideas of sipping the hot frappucino and expressing the desire to becoming the head of an as of yet non-existent department.</p>
-            <ul>
-                <li>Initial level of enthusiasm: High.</li>
-                <li>Lasted: 2 months.</li>
-                <li>Reason: one has to do the actual work to earn the title and respect of team members. Ideas without execution mean nothing. John was not able to put his ideas into a realistic plan of action.</li>
-            </ul>
-            <p><strong>Situation B</strong>: Mary joined the startup in the early stage of the project. An intelligent person with full set of professional skills. However, her enthusiasm faded away after a slowdown in workflow as well as having to deal with some personal problems.</p>
-            <ul>
-                <li>Initial level of enthusiasm: High.</li>
-                <li>Lasted: 10 months.</li>
-                <li>Reason: lack of perseverance.</li>
-            </ul>
-            <p><strong>Situation C</strong>: Peter joined the startup several months after the start. A knowledgeable and ambitious person, he tried to incorporate his own ideas into the mainstream. An aggressive approach turned into politicking and backstabbing within the workplace.</p>
-            <ul>
-                <li>Initial level of enthusiasm: Very High.</li>
-                <li>Lasted: 3 months.</li>
-                <li>Reason: execution of personal agenda without considering the team's vision.</li>
-            </ul>
-            <p>The process of hiring a new person is risky, but inevitable. It is dangerous to drive a car, but how else will you get to your destination point? So the smart startup founder will take reasonable precautions to avoid future bad exit situations.</p>
-            <p><i>“One cannot hire a hand— the whole man always comes with it”</i>, an old proverb says.</p>
-            <p>Steps that will help to evaluate individuals performance and make decisions about their involvement within the team:</p>
-            <ul>
-                <li><strong>3 month - time to review a new recruit’s performance and make an evaluation.</strong></li>
-                <li><strong>6 month - time to make a decision if that person should become a fully fledged member or a partner.</strong></li>
-                <li><strong>2 years vesting period - it should help to avoid any unexpected future circumstances in people's lives. The vesting period can be longer or shorter depending on partner's preferences.</strong></li>
-            </ul>
-            <p>Another way is to take your time during the recruiting period and be 100% sure that your candidate will fit in with the team. Drucker, Peter F writes in his “The Effective Executive” book:</p>
-            <p><i>Among the effective executives I have had occasion to observe, there have been people who make decisions fast, and people who make them rather slowly. But without exception, they make personnel decisions slowly and they make them several times before they really commit themselves.<br>Alfred P. Sloan, Jr., former head of General Motors, the world’s largest manufacturing company, was reported never to make a personnel decision the first time it came up. He made a tentative judgment, and even that took several hours as a rule. Then, a few days or weeks later, he tackled the question again, as if he had never worked on it before. Only when he came up with the same name two or three times in a row was he willing to go ahead. Sloan had a deserved reputation for the “winners” he picked. But when asked about his secret, he is reported to have said: “No secret— I have simply accepted that the first name I come up with is likely to be the wrong name— and I therefore retrace the whole process of thought and analysis a few times before I act.” Yet Sloan was far from a patient man.<br>Few executives make personnel decisions of such impact. But all effective executives I have had occasion to observe have learned that they have to give several hours of continuous and uninterrupted thought to decisions on people if they hope to come up with the right answer.</i></p>
-            <p>What do you experience when a new member joins your own team or startup? Is there a probational period?</p>
-            <p>Thank you in advance for your feedback!</p>
-            <br><br><br>
-            <p style="text-align:center; font-size:20px">***</p>
-            <br><br><br><br><br><br>
-
-            <div class="spacing"></div><br><br>
-
-
-            <!--<div class="hline"></div>-->
-
-            <!-- Blog Post 3 -->
-            <!-- 				<a name="3" class="anchor"></a>
-                             <a href="single-post.html"><h3 class="ctitle">Logo design contest starts now.</h3></a>
-                             <p><csmall>Posted: April 25, 2014.</csmall> | <csmall2>By: Admin - 3 Comments</csmall2></p>
-                             <p><img class="img-responsive" src="img/post03.jpg"></p>
-                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                             <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                             <p><a href="single-post.html">[Read More]</a></p>
-                             <div class="hline"></div>
-             -->
-        </div><!--/col-lg-8 -->
-
-
-        <!-- SIDEBAR -->
-        <div class="col-lg-4">
-            <!-- 		 		<h4>Search</h4>
-                             <div class="hline"></div>
-                                 <p>
-                                     <br/>
-                                     <input type="text" class="form-control" placeholder="Search something">
-                                 </p>
-
-                             <div class="spacing"></div>
-
-                             <h4>Categories</h4>
-                             <div class="hline"></div>
-                                 <p><a href="#"><i class="fa fa-angle-right"></i> Equity Share</a> <span class="badge badge-theme pull-right">1</span></p>
-                                 <p><a href="#"><i class="fa fa-angle-right"></i> Startup</a> <span class="badge badge-theme pull-right">1</span></p>
-
-                             <div class="spacing"></div>
-             -->
-            <h4>Recent Posts</h4>
-            <div class="hline"></div>
-            <ul class="popular-posts">
-                <br>
-                <li>
-                    <a href="post4"><img src="../img/blog/dontknow_thumb.jpg" alt="Popular Post"></a>
-                    <p><a href="post4">Jack of all trades or specialist?</a></p>
-                    <em>Posted on 12/31/16</em>
-                </li>
-                <li>
-                    <a href="post3"><img src="../img/blog/agent_thumb.png" alt="Popular Post"></a>
-                    <p><a href="post3">Agent provocateur</a></p>
-                    <em>Posted on 12/16/16</em>
-                </li>
-                <li>
-                    <a href="post2"><img src="../img/blog/coffee_thumb.jpg" alt="Popular Post"></a>
-                    <p><a href="post2">Minus one: your partner left the company.</a></p>
-                    <em>Posted on 12/11/16</em>
-                </li>
-                <li>
-                    <a href="post1"><img src="../img/blog/equity_thumb.jpg" alt="Popular Post"></a>
-                    <p><a href="post1">How do you share equity in your startup?</a></p>
-                    <em>Posted on 12/04/16</em>
-                </li>
-                <!--<li>-->
-                <!--<a href="#"><img src="img/thumb04.jpg" alt="Popular Post"></a>-->
-                <!--<p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>-->
-                <!--<em>Posted on 05/16/14</em>-->
-                <!--</li>-->
-            </ul>
-
-            <div class="spacing"></div>
-
-            <!-- 		 		<h4>Popular Tags</h4>
-                             <div class="hline"></div>
-                                 <p>
-                                    <a class="btn btn-theme" href="blog.hbs#1" role="button">Equity Share</a>
-                                    <a class="btn btn-theme" href="#" role="button">Startup</a>
-                                 </p>
-             -->	 		</div>
-    </div><!--/row -->
-</div><!--/container -->
-
-
-<!-- *****************************************************************************************************************
- FOOTER
- ***************************************************************************************************************** -->
-<div id="footerwrap">
-    <div class="container">
-        <div class="row">
-            <!-- 		 		<div class="col-lg-4">
-                                 <h4>About</h4>
-                                 <div class="hline-w"></div>
-                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-                             </div>
-             -->		 		<div class="col-lg-12">
-            <h4>Social Links</h4>
-            <div class="hline-w"></div>
-            <p>
-                <a href="https://www.facebook.com/equitysplit/"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/equity_split"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/company/10975490"><i class="fa fa-linkedin"></i></a>
-                <a href="https://www.reddit.com/user/equity_split/"><i class="fa fa-reddit-alien"></i></a>
-            </p>
-        </div>
-            <!-- 		 		<div class="col-lg-4">
-                                 <h4>Our Bunker</h4>
-                                 <div class="hline-w"></div>
-                                 <p>
-                                     Some Ave, 987,<br/>
-                                     23890, New York,<br/>
-                                     United States.<br/>
-                                 </p>
-                             </div>
-             -->
-        </div><!--/row -->
-        <div class="row">
-            <p>Copyright &copy; 2016 Cohesive Bits.</p>
-        </div>
-    </div><!--/container -->
-</div><!--/footerwrap -->
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/retina-1.1.0.js"></script>
-<script src="../js/jquery.hoverdir.js"></script>
-<script src="../js/jquery.hoverex.min.js"></script>
-<script src="../js/jquery.prettyPhoto.js"></script>
-<script src="../js/jquery.isotope.min.js"></script>
-<script src="../js/custom.js"></script>
-
-
-</body>
-</html>
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        include ../navbar
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                // BLOG POSTS LIST
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    // Blog Post 7
+                    a.anchor(name='7')
+                    h3.ctitle Probation period for new employee
+                    p
+                        csmall Posted: February 1, 2017.
+                        csmall2 By: Sergei Stadnik
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/stick_figures.png')
+                    br
+                    p Reading time:
+                        strong 4 minutes
+                    br
+                    p The day when a new member becomes a part of the team and starts contributing is an exciting moment for this person. The newcomer typically  is very enthusiastic and anxious to add value. He / she has new ideas and views. It is critical to see how a prospective partner / teammate will fit in and able to work with the existing team.
+                    p
+                        strong How to avoid the recruiting gamble and be confident about new  hire?
+                    p The probation period is a time of finding out who the person really is. No matter how great the first impression was during the interview, you will not know the true character and behaviours of the person until you worked together for some time. Typically, the probation period of 3-6 months is a good indicator of what to expect from an individual. It is a good portion of time to evaluate the potential and hidden caveats. Based on personal experience, a 2-3 month period is good enough for a person to fully reveal himself/herself.
+                    p Why do you need a probational period? Here are some real startup examples:
+                    p
+                        strong Situation A
+                        | : John was a member of the ”Starbucks club” before the startup was even formed. He was discussing the ideas of sipping the hot frappucino and expressing the desire to becoming the head of an as of yet non-existent department.
+                    ul
+                        li Initial level of enthusiasm: High.
+                        li Lasted: 2 months.
+                        li Reason: one has to do the actual work to earn the title and respect of team members. Ideas without execution mean nothing. John was not able to put his ideas into a realistic plan of action.
+                    p
+                        strong Situation B
+                        | : Mary joined the startup in the early stage of the project. An intelligent person with full set of professional skills. However, her enthusiasm faded away after a slowdown in workflow as well as having to deal with some personal problems.
+                    ul
+                        li Initial level of enthusiasm: High.
+                        li Lasted: 10 months.
+                        li Reason: lack of perseverance.
+                    p
+                        strong Situation C
+                        | : Peter joined the startup several months after the start. A knowledgeable and ambitious person, he tried to incorporate his own ideas into the mainstream. An aggressive approach turned into politicking and backstabbing within the workplace.
+                    ul
+                        li Initial level of enthusiasm: Very High.
+                        li Lasted: 3 months.
+                        li Reason: execution of personal agenda without considering the team's vision.
+                    p
+                        | The process of hiring a new person is risky, but inevitable. It is dangerous to drive a car, but how else will you get to your destination point? So the smart startup founder will take reasonable precautions to avoid future bad exit situations.
+                    p
+                        i “One cannot hire a hand— the whole man always comes with it”
+                        | , an old proverb says.
+                    p
+                        | Steps that will help to evaluate individuals performance and make decisions about their involvement within the team:
+                    ul
+                        li
+                            strong 3 month - time to review a new recruit’s performance and make an evaluation.
+                        li
+                            strong 6 month - time to make a decision if that person should become a fully fledged member or a partner.
+                        li
+                            strong 2 years vesting period - it should help to avoid any unexpected future circumstances in people's lives. The vesting period can be longer or shorter depending on partner's preferences.
+                    p Another way is to take your time during the recruiting period and be 100% sure that your candidate will fit in with the team. Drucker, Peter F writes in his “The Effective Executive” book:
+                    p
+                        i  Among the effective executives I have had occasion to observe, there have been people who make decisions fast, and people who make them rather slowly. But without exception, they make personnel decisions slowly and they make them several times before they really commit themselves.
+                            br
+                            | Alfred P. Sloan, Jr., former head of General Motors, the world’s largest manufacturing company, was reported never to make a personnel decision the first time it came up. He made a tentative judgment, and even that took several hours as a rule. Then, a few days or weeks later, he tackled the question again, as if he had never worked on it before. Only when he came up with the same name two or three times in a row was he willing to go ahead. Sloan had a deserved reputation for the “winners” he picked. But when asked about his secret, he is reported to have said: “No secret— I have simply accepted that the first name I come up with is likely to be the wrong name— and I therefore retrace the whole process of thought and analysis a few times before I act.” Yet Sloan was far from a patient man.
+                            br
+                            | Few executives make personnel decisions of such impact. But all effective executives I have had occasion to observe have learned that they have to give several hours of continuous and uninterrupted thought to decisions on people if they hope to come up with the right answer.
+                    p What do you experience when a new member joins your own team or startup? Is there a probational period?
+                    p Thank you in advance for your feedback!
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    .spacing
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

@@ -39,7 +39,8 @@ module.exports = {
             subject: subject,
             message: message,
             created_at : new Date().toLocaleString(),
-            utc: current_time+25200000
+            // utc: current_time+25200000
+            utc: current_time
         });
 
         this.getMessages();
@@ -53,7 +54,8 @@ module.exports = {
         firebase.database().ref('subscribers/').push({
             email: email,
             created_at : new Date().toLocaleString(),
-            utc: current_time+25200000
+            // utc: current_time+25200000
+            utc: current_time
         });
 
         this.getSubscribers();

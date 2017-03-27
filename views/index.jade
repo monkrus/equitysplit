@@ -1,5 +1,7 @@
 extends layout
 
+block append head
+
 block content
   body
     include navbar
@@ -150,7 +152,7 @@ block content
                 .form-group
                   // <a type="submit" href="mailto:team@cohesivebits.com?subject=Hiring" class="btn btn-theme">Submit</a>
                   // <a type="submit" class="btn btn-theme">Submit</a>
-                  a.btn.btn-theme(type='submit', onclick='message()') Submit
+                  a.btn.btn-theme#message_button(type='submit', onclick='message()') Submit
         .col-lg-4
           h4 Subscribe to our newsletter!
           .hline
@@ -162,7 +164,7 @@ block content
                   label(for='subscribe_email') Email address
                   input#subscribe_email.form-control(type='email', name='email')
                 // <a type="submit" href="mailto:team@cohesivebits.com?subject=Newsletter" class="btn btn-theme">Subscribe</a>
-                a.btn.btn-theme(type='submit', onclick='subscribe()') Subscribe
+                a.btn.btn-theme#subscribe_button(type='submit', onclick='subscribe()') Subscribe
                 // <a type="submit" class="btn btn-theme">Subscribe</a>
 
     #twrap
@@ -246,3 +248,5 @@ block content
     script(src='js/jquery.prettyPhoto.js')
     script(src='js/jquery.isotope.min.js')
     script(src='js/custom.js')
+    script(type='text/javascript', src='/js/notify.min.js')
+    script(type='text/javascript', src='/js/home.js')

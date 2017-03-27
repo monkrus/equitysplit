@@ -38,9 +38,9 @@ module.exports = {
             email: email,
             subject: subject,
             message: message,
-            created_at : new Date().toLocaleString(),
-            // utc: current_time+25200000
-            utc: current_time
+            // created_at : new Date().toLocaleString(),
+            created_at : current_time+25200000,
+            utc: current_time+25200000
         });
 
         this.getMessages();
@@ -53,9 +53,9 @@ module.exports = {
 
         firebase.database().ref('subscribers/').push({
             email: email,
-            created_at : new Date().toLocaleString(),
-            // utc: current_time+25200000
-            utc: current_time
+            // created_at : new Date().toLocaleString(),
+            created_at : current_time+25200000,
+            utc: current_time+25200000
         });
 
         this.getSubscribers();

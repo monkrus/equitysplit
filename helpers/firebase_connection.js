@@ -13,11 +13,6 @@ const beautify = require("json-beautify");
 // var firebase_credentials = require("../config/firebase_credentials.json");
 
 const config = {
-    // apiKey:             firebase_credentials.apiKey,
-    // authDomain:         firebase_credentials.authDomain,
-    // databaseURL:        firebase_credentials.databaseURL,
-    // storageBucket:      firebase_credentials.storageBucket,
-    // messagingSenderId:  firebase_credentials.messagingSenderId
     apiKey:             process.env.FIREBASE_API_KEY,
     authDomain:         process.env.FIREBASE_AUTH_DOMAIN,
     databaseURL:        process.env.FIREBASE_DATABASE_URL,
@@ -28,6 +23,8 @@ firebase.initializeApp(config);
 
 
 module.exports = {
+
+    
 
     saveMessage: function(name, email, subject, message) {
 
@@ -60,13 +57,6 @@ module.exports = {
 
         this.getSubscribers();
 
-    },
-
-    test: function() {
-        jsonfile.writeFile('./helpers/subscribers.json', {stuff:'thing'}, function (err) {
-            console.log('running the subscribe');
-            console.error(err)
-        });
     },
 
     getMessages: function(callback) {
@@ -122,4 +112,3 @@ module.exports = {
     }
 
 };
-

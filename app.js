@@ -11,9 +11,9 @@ const handlebars      = require('express-handlebars');
 const index           = require('./routes/index');
 const blog            = require('./routes/blog');
 const demo            = require('./routes/demo');
-const demo2            = require('./routes/demo2');
-const admin         = require('./routes/admin');
-// const users           = require('./routes/users');
+const demo2           = require('./routes/demo2');
+const admin           = require('./routes/admin');
+const users           = require('./routes/users');
 
 const app             = express();
 
@@ -35,7 +35,6 @@ const app             = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -48,8 +47,8 @@ app.use('/blog', blog);
 app.use('/demo', demo);
 app.use('/demo2', demo2);
 app.use('/admin', admin);
+app.use('/users', users);
 app.use('/', index);
-// app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,627 @@
+extends layout
+
+block append head
+
+    link(href='/css/demo.css', rel='stylesheet')
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/moment.min.js')
+    script(type='text/javascript', src='/js/bootstrap-datepicker.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript', src='/js/calculate_share.js')
+    script(type='text/javascript', src='/js/display_share.js')
+
+block content
+    body(onload='loadBody()', onresize='resizeChart()')
+        script.
+            ( function(d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        // Fixed navbar
+        .navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='#back-to-top')
+                        img#logo.pull-left(src='assets/img/es_full_logo_bg.png')
+                .navbar-collapse.collapse.navbar-right
+                    ul.nav.navbar-nav
+                        li
+                            a(href='index.html') HOME
+                        li
+                            a(href='index.html#about') ABOUT
+                        li.active
+                            a(href='demo.html') DEMO
+                        li
+                            a(href='index.html#contact') CONTACT
+                        li
+                            a(href='blog.html') BLOG
+                // /.nav-collapse
+        br
+        br
+        br
+        .tip-section
+            .tip-section-margin
+                p.white-text.tip-center
+                    | This is our beta version that calculates equity share for members in a startup or company.
+                ul.white-text.list-style
+                    li
+                        | They key variables are an individual’s annual compensation, hours worked as well as invested and contributed cash.
+                    li
+                        | The logic is that "hours worked" and "hourly rate" translate into individual's equity ownership.
+                    li
+                        | Any "invested cash" is multiplied by 4 and gets added to the individual’s equity ownership. Time is easier to contribute than cash, hence the multiplier is being used to account for it.
+                        br
+                        | An example: $100 of investment x 4 = $400 in equity contribution.
+                    li
+                        | "Start Date" is an important date as it is keeping track of how long an individual has been part of the team. One can estimate a probation period for new members, for instance,  6 months of initial probation and then set 2 years as the equity vested period.
+                p.white-text.tip-center
+                    | Our team welcomes your feedback and questions. Please be kind to leave them below.
+                p.white-text.tip-center Thank you very much.
+        h1.centered Equity Split Calculation
+        .next-back-icon
+            p.image-font
+                a(href='#back', onclick='return false;')
+                    span.glyphicon.glyphicon-circle-arrow-left
+                a(href='#next', onclick='return false;')
+                    span.glyphicon.glyphicon-circle-arrow-right
+        form#calculateform_id(name='calculateform_name', method='post', onsubmit='return false;')
+            div
+                .bs-example
+                    table#cal_table_id.table.table-bordered
+                        thead
+                            tr#tr_id_0.info.header-font
+                                th.first_field Name
+                                th $ Share
+                                th # Share
+                                th % Share
+                                th $ Non Cash
+                                th $ Invested Cash
+                                th.date-width Start Date
+                                // Date joined the project
+                                th # Days
+                                // Date on the project
+                                th Vested Date
+                                // Vested Time
+                                th # Worked Hours
+                                th % Efficiency
+                                // Individual Efficiency
+                                th $ Salary
+                                th $ Hourly Rate
+                                // Salary Per Hour
+                        tbody
+                            tr#tr_id_1.active
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member1_name', value='Sarah')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member1_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member1_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member1_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member1_nc_id.blue-color.form-control(type='text', name='member1_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member1_ic_id.form-control(type='text', name='member1_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member1_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', name='member1_djtp', value='2016/10/02', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member1_dotp_id.blue-color.form-control(type='text', name='member1_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member1_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member1_hw_id.form-control(type='text', name='member1_hw', onkeypress='return inputNumber(event);', value='117.2', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member1_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member1_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member1_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member1_sph_id.blue-color.form-control(type='text', name='member1_sph', disabled='')
+                            tr#tr_id_2.active
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member2_name', value='Emily')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member2_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member2_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member2_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member2_nc_id.blue-color.form-control(type='text', name='member2_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member2_ic_id.form-control(type='text', name='member2_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member2_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member2_djtp', value='2016/05/22', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member2_dotp_id.blue-color.form-control(type='text', name='member2_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member2_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member2_hw_id.form-control(type='text', name='member2_hw', onkeypress='return inputNumber(event);', value='235.4', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member2_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member2_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member2_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member2_sph_id.blue-color.form-control(type='text', name='member2_sph', disabled='')
+                            tr#tr_id_3.active
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member3_name', value='Emma')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member3_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member3_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member3_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member3_nc_id.blue-color.form-control(type='text', name='member3_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member3_ic_id.form-control(type='text', name='member3_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member3_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member3_djtp', value='2017/01/29', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member3_dotp_id.blue-color.form-control(type='text', name='member3_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member3_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member3_hw_id.form-control(type='text', name='member3_hw', onkeypress='return inputNumber(event);', value='29.7', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member3_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member3_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member3_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member3_sph_id.blue-color.form-control(type='text', name='member3_sph', disabled='')
+                            tr#tr_id_4.active
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member4_name', value='Simon')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member4_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member4_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member4_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member4_nc_id.blue-color.form-control(type='text', name='member4_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member4_ic_id.form-control(type='text', name='member4_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member4_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member4_djtp', value='2016/03/01', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member4_dotp_id.blue-color.form-control(type='text', name='member4_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member4_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member4_hw_id.form-control(type='text', name='member4_hw', onkeypress='return inputNumber(event);', value='301.3', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member4_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member4_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member4_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member4_sph_id.blue-color.form-control(type='text', name='member4_sph', disabled='')
+                            tr#tr_id_5.active
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member5_name', value='William')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member5_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member5_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member5_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member5_nc_id.blue-color.form-control(type='text', name='member5_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member5_ic_id.form-control(type='text', name='member5_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member5_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member5_djtp', value='2017/03/05', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member5_dotp_id.blue-color.form-control(type='text', name='member5_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member5_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member5_hw_id.form-control(type='text', name='member5_hw', onkeypress='return inputNumber(event);', value='28.5', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member5_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member5_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member5_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member5_sph_id.blue-color.form-control(type='text', name='member5_sph', disabled='')
+                            tr#tr_id_6.active.hide-row-table
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member6_name')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member6_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member6_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member6_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member6_nc_id.blue-color.form-control(type='text', name='member6_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member6_ic_id.form-control(type='text', name='member6_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member6_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member6_djtp', value='2017/03/11', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member6_dotp_id.blue-color.form-control(type='text', name='member6_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member6_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member6_hw_id.form-control(type='text', name='member6_hw', onkeypress='return inputNumber(event);', value='30', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member6_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member6_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member6_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member6_sph_id.blue-color.form-control(type='text', name='member6_sph', disabled='')
+                            tr#tr_id_7.active.hide-row-table
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member7_name')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member7_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member7_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member7_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member7_nc_id.blue-color.form-control(type='text', name='member7_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member7_ic_id.form-control(type='text', name='member7_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member7_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member7_djtp', value='2017/03/11', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member7_dotp_id.blue-color.form-control(type='text', name='member7_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member7_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member7_hw_id.form-control(type='text', name='member7_hw', onkeypress='return inputNumber(event);', value='30', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member7_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member7_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member7_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member7_sph_id.blue-color.form-control(type='text', name='member7_sph', disabled='')
+                            tr#tr_id_8.active.hide-row-table
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member8_name')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member8_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member8_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member8_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member8_nc_id.blue-color.form-control(type='text', name='member8_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member8_ic_id.form-control(type='text', name='member8_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member8_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member8_djtp', value='2017/03/11', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member8_dotp_id.blue-color.form-control(type='text', name='member8_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member8_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member8_hw_id.form-control(type='text', name='member8_hw', onkeypress='return inputNumber(event);', value='30', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member8_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member8_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member8_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member8_sph_id.blue-color.form-control(type='text', name='member8_sph', disabled='')
+                            tr#tr_id_9.active.hide-row-table
+                                td
+                                    .input-group
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-user
+                                        input.form-control(type='text', placeholder='name', name='member9_name')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member9_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input.green-color.form-control(type='text', name='member9_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member9_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member9_nc_id.blue-color.form-control(type='text', name='member9_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member9_ic_id.form-control(type='text', name='member9_ic', value='0', onkeypress='return inputNumber(event);')
+                                td
+                                    #member9_datetimepicker.input-group.date
+                                        span.input-group-addon
+                                            span.glyphicon.glyphicon-calendar
+                                        input.form-control(type='text', min='0', name='member9_djtp', value='2017/03/11', placeholder='yyyy/mm/dd')
+                                td
+                                    .input-group
+                                        input#member9_dotp_id.blue-color.form-control(type='text', name='member9_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input.green-color.form-control(type='text', name='member9_vt', disabled='')
+                                td
+                                    .input-group
+                                        input#member9_hw_id.form-control(type='text', name='member9_hw', onkeypress='return inputNumber(event);', value='30', required='required')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control(type='text', name='member9_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member9_ocs_id.form-control(type='text', onkeypress='return inputNumber(event);', name='member9_ocs', value='100,000', required='required')
+                                td
+                                    .input-group
+                                        input#member9_sph_id.blue-color.form-control(type='text', name='member9_sph', disabled='')
+                            tr#tr_id_999.active
+                                td
+                                    .input-group
+                                        input.form-control.total-color.total-bold(type='text', placeholder='name', name='member999_name', value='Totals', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control.total-color(type='text', name='member999_ysc', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_yss_id.green-color.form-control(type='text', name='member999_yss', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control.total-color(type='text', name='member999_ysp', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_nc_id.blue-color.form-control.total-color(type='text', name='member999_nc', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_ic_id.form-control.total-color(type='text', name='member999_ic', disabled='')
+                                td
+                                    .input-group.date
+                                        input.form-control.total-color(type='text', min='0', name='member999_djtp', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_dotp_id.blue-color.form-control.total-color(type='text', name='member999_dotp', disabled='')
+                                td
+                                    .input-group.date
+                                        input#member999_vt_id.green-color.form-control(type='text', name='member999_vt')
+                                td
+                                    .input-group
+                                        input#member999_hw_id.form-control.total-color(type='text', name='member999_hw', disabled='')
+                                td
+                                    .input-group
+                                        input.blue-color.form-control.total-color(type='text', name='member999_ie', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_ocs_id.form-control.total-color(type='text', name='member999_ocs', disabled='')
+                                td
+                                    .input-group
+                                        input#member999_sph_id.blue-color.form-control.total-color(type='text', name='member999_sph', disabled='')
+        .add-remove-icon
+            p.image-font
+                a(href='#add', onclick='return false;')
+                    span.glyphicon.glyphicon-plus-sign
+                a(href='#remove', onclick='return false;')
+                    span.glyphicon.glyphicon-minus-sign
+        .CalculationBut.col-md-12
+            button.btn.btn-theme.btn-width.btn-responsive(type='submit', name='calculationID', onclick='calculation(calculateform_id)') Calculate
+            button.btn.btn-theme.btn-width.btn-responsive(type='button', name='resetID', onclick='resetData(calculateform_id)') Reset
+        br
+        br
+        #graph_id.bs-example
+            table.table.table-bordered
+                tbody
+                    tr
+                        td
+                            h4.centered Equity Split Share $
+                            #pieChartContainer.chart-config
+                        td
+                            h4.centered Equity Split Share $
+                            #barChartContainer.chart-config
+        br
+        .bs-example
+            table.table.table-bordered
+                tbody
+                    tr
+                        td
+                            #disqus_thread
+                            script.
+                                /**
+                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                var disqus_config = function() {
+                                    this.page.url = "http://www.equity-split.com/";
+                                    // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = "equity-split";
+                                    // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                (function() {// DON'T EDIT BELOW THIS LINE
+                                    var d = document,
+                                        s = d.createElement('script');
+                                    s.src = 'https://equity-split.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    (d.head || d.body).appendChild(s);
+                                })();
+                            noscript
+                                | Please enable JavaScript to view the
+                                a(href='https://disqus.com/?ref_noscript') comments powered by Disqus.
+        br
+        br
+        br
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/', target='_blank')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split', target='_blank')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490', target='_blank')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+                                i.fa.fa-reddit-alien
+                // /row
+            // /row
+            .container
+                .row.centered
+                    p
+                        | Copyright © 2017 Cohesive Bits.
+            // /container
+        // /footerwrap
+        script.
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-96404160-1', 'auto');
+            ga('send', 'pageview');
+        script#dsq-count-scr(src='//equity-split.disqus.com/count.js', async='')
+        script(src='assets/js/retina-1.1.0.js')
+        script(src='assets/js/jquery.hoverdir.js')
+        script(src='assets/js/jquery.hoverex.min.js')
+        script(src='assets/js/jquery.prettyPhoto.js')
+        script(src='assets/js/jquery.isotope.min.js')
+        script(src='assets/js/custom.js')

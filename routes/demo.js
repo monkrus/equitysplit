@@ -6,7 +6,8 @@ const router = express.Router();
 
 
 router.get('/', function(req, res) {
-    res.render('demo');
+    // res.render('demo');
+    res.render('demo3');
 });
 
 module.exports = router;

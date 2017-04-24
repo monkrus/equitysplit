@@ -1,0 +1,171 @@
+.bs-example {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 40px;
+}
+
+.chart-config {
+    width: 100%;
+    height: 360px;
+    float: left;
+}
+
+#graph_id {
+    display:none;
+}
+
+#graph_id td {
+    width: 50%;
+}
+
+.first_field {
+    width: 150px;
+}
+
+.date-width {
+    width: 150px;
+}
+
+.form-control {
+    text-align: center;
+}
+
+#cal_table_id td {
+    padding: 1px;
+}
+
+#cal_table_id th {
+    text-align: center !important;
+}
+
+.tip-section {
+    background-color: #00b3fe;
+    padding-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.tip-center {
+    text-align: center;
+}
+
+.tip-section-margin {
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.list-style {
+    list-style-type: square;
+}
+
+.white-text {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 370px) {
+    .tip-section-margin {margin-right: 2%; margin-left: 2%;}
+}
+@media only screen and (min-width: 370px) and (max-width: 500px) {
+    .tip-section-margin {margin-right: 5%; margin-left: 5%;}
+}
+@media only screen and (min-width: 500px) and (max-width: 630px) {
+    .tip-section-margin {margin-right: 10%; margin-left: 10%;}
+}
+@media only screen and (min-width: 630px) and (max-width: 760px) {
+    .tip-section-margin {margin-right: 15%; margin-left: 15%;}
+}
+@media only screen and (min-width: 760px) and (max-width: 890px) {
+    .tip-section-margin {margin-right: 20%; margin-left: 20%;}
+}
+@media only screen and (min-width: 890px) {
+    .tip-section-margin {margin-right: 25%; margin-left: 25%;}
+}
+
+#cal_table_id tr td:nth-child(1),
+#cal_table_id tr th:nth-child(1),
+#cal_table_id tr td:nth-child(2),
+#cal_table_id tr th:nth-child(2),
+#cal_table_id tr td:nth-child(3),
+#cal_table_id tr th:nth-child(3),
+#cal_table_id tr td:nth-child(4),
+#cal_table_id tr th:nth-child(4),
+#cal_table_id tr td:nth-child(5),
+#cal_table_id tr th:nth-child(5),
+#cal_table_id tr td:nth-child(6),
+#cal_table_id tr th:nth-child(6),
+#cal_table_id tr td:nth-child(7),
+#cal_table_id tr th:nth-child(7),
+#cal_table_id tr td:nth-child(8),
+#cal_table_id tr th:nth-child(8),
+#cal_table_id tr td:nth-child(9),
+#cal_table_id tr th:nth-child(9),
+#cal_table_id tr td:nth-child(10),
+#cal_table_id tr th:nth-child(10),
+#cal_table_id tr td:nth-child(11),
+#cal_table_id tr th:nth-child(11),
+#cal_table_id tr td:nth-child(12),
+#cal_table_id tr th:nth-child(12),
+#cal_table_id tr td:nth-child(13),
+#cal_table_id tr th:nth-child(13),
+#cal_table_id tr td:nth-child(14),
+#cal_table_id tr th:nth-child(14) {
+    display: none;
+}
+
+th {
+    vertical-align: middle !important;
+}
+
+.blue-color {
+    color: #3266CC;
+}
+
+.red-color {
+    color: #DC3812;
+}
+
+.orange-color {
+    color: #FE9900;
+}
+
+.green-color {
+    color: #109717;
+}
+
+.white-color {
+    color: #FFFFFF;
+}
+
+.next-back-icon {
+    float: right;
+    margin-right: 2%;
+}
+
+.add-remove-icon {
+    float: left;
+    margin-top: -20px;
+    margin-left: 2%;
+}
+
+.hide-row-table {
+    display:none;
+}
+
+.image-font {
+    font-size: 20px;
+}
+
+.header-font {
+    font-size: 14px;
+}
+
+.total-color {
+    background-color: #ffb84d !important;
+}
+
+.total-bold {
+    font-weight: bold;
+}

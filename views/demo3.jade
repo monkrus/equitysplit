@@ -2,17 +2,18 @@ extends layout
 
 block append head
 
-    link(href='/css/demo.css', rel='stylesheet')
-    //script(type='text/javascript', src='/js/jquery.min.js')
-    //script(type='text/javascript', src='/js/bootstrap.min.js')
-    //script(type='text/javascript', src='/js/moment.min.js')
-    //script(type='text/javascript', src='/js/bootstrap-datepicker.min.js')
-    //script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
-    //script(type='text/javascript', src='/js/calculate_share.js')
-    //script(type='text/javascript', src='/js/display_share.js')
+    link(href='/css/demo3.css', rel='stylesheet')
+    script(type='text/javascript', src='/js/jquery.min.js')
+    script(type='text/javascript', src='/js/bootstrap.min.js')
+    script(type='text/javascript', src='/js/moment.min.js')
+    script(type='text/javascript', src='/js/bootstrap-datepicker.min.js')
+    script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+    script(type='text/javascript', src='/js/calculate_share.js')
+    script(type='text/javascript', src='/js/display_share.js')
 
 block content
     body(onload='loadBody()', onresize='resizeChart()')
+        include navbar
         script.
             ( function(d, s, id) {
                 var js,
@@ -24,30 +25,30 @@ block content
                 js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-        // Fixed navbar
-        .navbar.navbar-default.navbar-fixed-top(role='navigation')
-            .container
-                .navbar-header
-                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                        span.sr-only Toggle navigation
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                    a.navbar-brand(href='#back-to-top')
-                        img#logo.pull-left(src='assets/img/es_full_logo_bg.png')
-                .navbar-collapse.collapse.navbar-right
-                    ul.nav.navbar-nav
-                        li
-                            a(href='index.html') HOME
-                        li
-                            a(href='index.html#about') ABOUT
-                        li.active
-                            a(href='demo.html') DEMO
-                        li
-                            a(href='index.html#contact') CONTACT
-                        li
-                            a(href='blog.html') BLOG
-                // /.nav-collapse
+        //// Fixed navbar
+        //.navbar.navbar-default.navbar-fixed-top(role='navigation')
+        //    .container
+        //        .navbar-header
+        //            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        //                span.sr-only Toggle navigation
+        //                span.icon-bar
+        //                span.icon-bar
+        //                span.icon-bar
+        //            a.navbar-brand(href='#back-to-top')
+        //                img#logo.pull-left(src='assets/img/es_full_logo_bg.png')
+        //        .navbar-collapse.collapse.navbar-right
+        //            ul.nav.navbar-nav
+        //                li
+        //                    a(href='index.html') HOME
+        //                li
+        //                    a(href='index.html#about') ABOUT
+        //                li.active
+        //                    a(href='demo.html') DEMO
+        //                li
+        //                    a(href='index.html#contact') CONTACT
+        //                li
+        //                    a(href='blog.html') BLOG
+        //        // /.nav-collapse
         br
         br
         br
@@ -618,13 +619,13 @@ block content
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-96404160-1', 'auto');
             ga('send', 'pageview');
-        script(src='assets/js/jquery.min.js')
-        script(src='assets/js/bootstrap.min.js')
-        script(src='assets/js/moment.min.js')
-        script(src='assets/js/bootstrap-datepicker.min.js')
-        script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
-        script(src='assets/js/calculate_share.js')
-        script(src='assets/js/display_share.js')
+        //script(src='assets/js/jquery.min.js')
+        //script(src='assets/js/bootstrap.min.js')
+        //script(src='assets/js/moment.min.js')
+        //script(src='assets/js/bootstrap-datepicker.min.js')
+        //script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+        //script(src='assets/js/calculate_share.js')
+        //script(src='assets/js/display_share.js')
         script#dsq-count-scr(src='//equity-split.disqus.com/count.js', async='')
         script(src='assets/js/retina-1.1.0.js')
         script(src='assets/js/jquery.hoverdir.js')

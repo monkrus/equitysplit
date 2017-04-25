@@ -9,6 +9,7 @@ block append head
     script(type='text/javascript', src='/js/bootstrap-datepicker.min.js')
     script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
     script(type='text/javascript', src='/js/calculate_share.js')
+    script(type='text/javascript', src='/js/home.js')
     script(type='text/javascript', src='/js/display_share.js')
 
 block content
@@ -52,25 +53,27 @@ block content
         br
         br
         br
-        .tip-section
-            .tip-section-margin
-                p.white-text.tip-center
-                    | This is our beta version that calculates equity share for members in a startup or company.
-                ul.white-text.list-style
-                    li
-                        | They key variables are an individual’s annual compensation, hours worked as well as invested and contributed cash.
-                    li
-                        | The logic is that "hours worked" and "hourly rate" translate into individual's equity ownership.
-                    li
-                        | Any "invested cash" is multiplied by 4 and gets added to the individual’s equity ownership. Time is easier to contribute than cash, hence the multiplier is being used to account for it.
-                        br
-                        | An example: $100 of investment x 4 = $400 in equity contribution.
-                    li
-                        | "Start Date" is an important date as it is keeping track of how long an individual has been part of the team. One can estimate a probation period for new members, for instance,  6 months of initial probation and then set 2 years as the equity vested period.
-                p.white-text.tip-center
-                    | Our team welcomes your feedback and questions. Please be kind to leave them below.
-                p.white-text.tip-center Thank you very much.
-        h1.centered Equity Split Calculation
+        br
+        br
+        //.tip-section
+        //    .tip-section-margin
+        //        p.white-text.tip-center
+        //            | This is our beta version that calculates equity share for members in a startup or company.
+        //        ul.white-text.list-style
+        //            li
+        //                | They key variables are an individual’s annual compensation, hours worked as well as invested and contributed cash.
+        //            li
+        //                | The logic is that "hours worked" and "hourly rate" translate into individual's equity ownership.
+        //            li
+        //                | Any "invested cash" is multiplied by 4 and gets added to the individual’s equity ownership. Time is easier to contribute than cash, hence the multiplier is being used to account for it.
+        //                br
+        //                | An example: $100 of investment x 4 = $400 in equity contribution.
+        //            li
+        //                | "Start Date" is an important date as it is keeping track of how long an individual has been part of the team. One can estimate a probation period for new members, for instance,  6 months of initial probation and then set 2 years as the equity vested period.
+        //        p.white-text.tip-center
+        //            | Our team welcomes your feedback and questions. Please be kind to leave them below.
+        //        p.white-text.tip-center Thank you very much.
+        h1.centered Equity Share Calculator
         .next-back-icon
             p.image-font
                 a(href='#back', onclick='return false;')
@@ -560,6 +563,26 @@ block content
                             h4.centered Equity Split Share $
                             #barChartContainer.chart-config
         br
+        br
+        br
+        .option-heading.text-center(style='color:white;')
+            p
+                .glyphicon.glyphicon-chevron-down
+                .glyphicon.glyphicon-chevron-up
+                |  Equity Share Calculator
+        .option-content
+            p
+                p.text-center
+                    | They key variables are an individual’s annual compensation, hours worked as well as invested and contributed cash.
+                p.text-center
+                    | The logic is that "hours worked" and "hourly rate"" translate into a member's equity ownership.
+                p.text-center
+                    | Any "invested cash" is multiplied by 4 and gets added to the individual’s equity ownership. It's easier to contribute with time than cash, hence the multiplier being used to account for it.
+                    br
+                    | E.g. An investment of $100 x 4 = $400 in equity contribution.
+                p.text-center
+                    | "Start Date" is an important date as it is keeping track of how long an individual has been part of the team. One can estimate a probation period for new members, for instance, 6 months of initial probation and then set 2 years as the equity vested period.
+
         .bs-example
             table.table.table-bordered
                 tbody

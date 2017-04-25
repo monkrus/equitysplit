@@ -169,3 +169,33 @@ th {
 .total-bold {
     font-weight: bold;
 }
+
+.option-heading{
+    background:grey;
+    width:100%;
+    padding:1px 0px;
+    cursor:pointer;
+}
+.option-content p,
+.option-heading p{
+}
+.option-content p{
+    margin:30px 50px;
+}
+.option-content{
+    background:grey;
+    background:#baf1ff;
+    width:100%;
+    color:grey;
+    padding-top:1px;
+    padding-bottom:1px;
+}
+.arrow-up{
+    margin-left:-20px;
+    width:25px;
+    display:inline-block;
+}
+.glyphicon-chevron-down,
+.glyphicon-chevron-up{
+    color:white;
+}

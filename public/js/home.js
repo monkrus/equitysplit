@@ -13,4 +13,10 @@ $(document).ready(function () {
         $(this).closest('form').find("input[type=text], textarea").val("");
         $(this).closest('form').find("input[type=email], textarea").val("");
     });
+    $(".option-content").hide();
+    $(".glyphicon-chevron-up").hide();
+    $(".option-heading").click(function(){
+        $(this).next(".option-content").slideToggle(500);
+        $(this).find(".glyphicon-chevron-up, .glyphicon-chevron-down").toggle();
+    });
 });

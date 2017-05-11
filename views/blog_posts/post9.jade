@@ -1,0 +1,147 @@
+extends ../layout
+
+block content
+    body
+        #fb-root
+        script.
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1766789033574076";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        include ../navbar
+        //
+          *****************************************************************************************************************
+          BLUE WRAP
+          *****************************************************************************************************************
+        #blue
+            .container
+                .row
+                    h3 Blog List.
+        //
+          *****************************************************************************************************************
+          BLOG CONTENT
+          *****************************************************************************************************************
+        .container.mtb
+            .row
+                // BLOG POSTS LIST
+                .col-lg-8
+                    // Go to www.addthis.com/dashboard to customize your tools
+                    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5858e8431d911a01')
+                    // Blog Post 8
+                    a.anchor(name='8')
+                    h3.ctitle Let's understand if there is a problem that can be solved
+                    p
+                        csmall Posted: May 11, 2017.
+                        csmall2 By: Miroslav Tsibinog
+                    br
+                    p
+                        img.img-responsive(src='../img/blog/maze.jpg')
+                    br
+                    p Reading time:
+                        strong  2 minutes
+                    br
+                    p For the next three months - April, May and June - our team is going on a journey to find out whether people are having issues with fair equity calculations and proper allocation amongst participants.  It is an exciting and crucial time as this exercise will help us determine if there is a need for an equity split solution. Fun times!
+                    p The goal: 
+                        strong understand if there is a problem that can be solved
+                    p The approach: interview 30 business owners, 30 minutes long interview with each individual to get a sense of problems they experience with equity ownership, ask for 2-3 referrals, and incorporate feedback into prototype.
+                    p Questions that we will going to answer through interviews are:
+                        ul
+                            li
+                                strong Is there an equity problem worth solving?
+                            li
+                                strong How is this problem being addressed by business owners at the moment?
+                            li
+                                strong Is there a market fit for the equity split solution?
+                    p Framework: We are using the strategyzer.com’s value proposition framework which captures customer jobs, pains and gains.
+                    p The concept is simple.  We ask business/start up founders to rank three pains related to equity calculation within the business, describe how they address these difficulties and what is done to achieve the desired outcome.  Identified pains will demonstrate if there is a recurring problem that businesses and startups are experiencing on an ongoing basis.  Approaches used to address an equity split problems, as identified by the founders, will be used to create a solution in order to fairly track equity ownership.
+                    p This framework is great at addressing ambiguity and helps to structure our discoveries. Loving it!
+                    p
+                        img.img-responsive(src='../img/blog/value_proposition_framework.jpg')
+                    p Please check out this link if you wish to learn about this approach directly from the source:
+                    a(href='http://blog.strategyzer.com/posts/2016/7/20/how-to-capture-customer-jobs-pains-gains-that-arent-subjective?rq=How%20To%20Capture%20Customer', target='_blank')  http://blog.strategyzer.com/posts/2016/7/20/how-to-capture-customer-jobs-pains-gains-that-arent-subjective
+                    br
+                    br
+                    br
+                    p Wish us luck and please feel free to share your thoughts.
+                    p :- ) We will be happy to interview you or people that you might know. Ping us!
+
+                    br
+                    br
+                    br
+                    p(style='text-align:center; font-size:20px') ***
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    .spacing
+                    br
+                    br
+                // SIDEBAR
+                .col-lg-4
+                    //
+                    h4 Recent Posts
+                    .hline
+                    ul.popular-posts
+                        br
+                        li
+                            a(href='post4')
+                                img(src='../img/blog/dontknow_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post4') Jack of all trades or specialist?
+                            em Posted on 12/31/16
+                        li
+                            a(href='post3')
+                                img(src='../img/blog/agent_thumb.png', alt='Popular Post')
+                            p
+                                a(href='post3') Agent provocateur
+                            em Posted on 12/16/16
+                        li
+                            a(href='post2')
+                                img(src='../img/blog/coffee_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post2') Minus one: your partner left the company.
+                            em Posted on 12/11/16
+                        li
+                            a(href='post1')
+                                img(src='../img/blog/equity_thumb.jpg', alt='Popular Post')
+                            p
+                                a(href='post1') How do you share equity in your startup?
+                            em Posted on 12/04/16
+                    .spacing
+        //
+          *****************************************************************************************************************
+          FOOTER
+          *****************************************************************************************************************
+        #footerwrap
+            .container
+                .row
+                    .col-lg-12
+                        h4 Social Links
+                        .hline-w
+                        p
+                            a(href='https://www.facebook.com/equitysplit/')
+                                i.fa.fa-facebook
+                            a(href='https://twitter.com/equity_split')
+                                i.fa.fa-twitter
+                            a(href='https://www.linkedin.com/company/10975490')
+                                i.fa.fa-linkedin
+                            a(href='https://www.reddit.com/user/equity_split/')
+                                i.fa.fa-reddit-alien
+                .row
+                    p Copyright &copy; 2016 Cohesive Bits.
+        //
+          Bootstrap core JavaScript
+          ==================================================
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='../js/bootstrap.min.js')
+        script(src='../js/retina-1.1.0.js')
+        script(src='../js/jquery.hoverdir.js')
+        script(src='../js/jquery.hoverex.min.js')
+        script(src='../js/jquery.prettyPhoto.js')
+        script(src='../js/jquery.isotope.min.js')
+        script(src='../js/custom.js')

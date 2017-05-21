@@ -1,0 +1,99 @@
+//
+   Created by krutoy on 5/16/17.
+
+extends ../layout
+
+block append head
+    //script(type='text/javascript', src='js/tinymce/js/tinymce/tinymce.min.js')
+    script(type='text/javascript', src='https://cloud.tinymce.com/stable/tinymce.min.js')
+    script.
+        tinymce.init({
+            selector: '#mytextarea',
+            height: 500,
+            theme: 'modern',
+            //            skin: 'charcoal',
+            //            skin_url: '/static/css/charcoal',
+            skin_url: '/css/tundora',
+            //            skin_url: '/static/css/xen',
+            plugins: [
+                'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+                'searchreplace wordcount visualblocks visualchars code fullscreen',
+                'insertdatetime media nonbreaking save table contextmenu directionality',
+                'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
+            ],
+            toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
+            //            image_advtab: true,
+            templates: [
+                {title: 'Test template 1', content: 'Test 1'},
+                {title: 'Test template 2', content: 'Test 2'}
+            ],
+            content_css: [
+                '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                '//www.tinymce.com/css/codepen.min.css'
+            ]
+        });
+
+block content
+    body
+        include ../navbar
+        //script(src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js')
+        script(type='text/javascript').
+            $(document).ready(function () {
+                $('p > img').each(function () {
+                    $(this).addClass('img-responsive');
+                });
+            //                $('iframe').ready(function () {
+            //                    var tinymce = $('#tinymce');
+            //                    console.log(tinymce);
+            //                    function setContent(value) {
+            //                        var markedContent = marked(value);
+            //                        $('#preview-content').val(markedContent);
+            //                        $('#preview-content img').each(function () {
+            //                            $(this).addClass('img-responsive');
+            //                        });
+            //                    }
+            //
+            //                    setContent(tinymce.val());
+            //                    tinymce.keyup(function () {
+            //                        var newContent = $(this).val();
+            //                        setContent(newContent);
+            //                    });
+            //                });
+            });
+
+        .container.tinymce-container
+            .row
+                .col-lg-12
+                    form(method='post')
+                        textarea#mytextarea Hello, World!
+
+        //#footerwrap
+        //    .container
+        //        .row
+        //            .col-lg-12
+        //                h4 Social Links
+        //                .hline-w
+        //                p
+        //                    a(href='https://www.facebook.com/equitysplit/', target='_blank')
+        //                        i.fa.fa-facebook
+        //                    a(href='https://twitter.com/equity_split', target='_blank')
+        //                        i.fa.fa-twitter
+        //                    a(href='https://www.linkedin.com/company/10975490', target='_blank')
+        //                        i.fa.fa-linkedin
+        //                    a(href='https://www.reddit.com/user/equity_split/', target='_blank')
+        //                        i.fa.fa-reddit-alien
+        //    .container
+        //        .row.centered
+        //            p Copyright &copy; 2017 Cohesive Bits.
+
+        //script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        //script(src='js/bootstrap.min.js')
+        //script(src='js/retina-1.1.0.js')
+        //script(src='js/jquery.hoverdir.js')
+        //script(src='js/jquery.hoverex.min.js')
+        //script(src='js/jquery.prettyPhoto.js')
+        //script(src='js/jquery.isotope.min.js')
+        //script(src='js/custom.js')
+        //script(type='text/javascript', src='/js/notify.min.js')
+        //script(type='text/javascript', src='/js/home.js')

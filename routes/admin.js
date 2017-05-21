@@ -12,11 +12,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/messages', function(req, res){
-
-    let entries = {
-        messages: null
-    };
-
+    let entries = {messages: null};
     fb_conn.getMessages(function(messages) {
         // console.log('inside getMessages - entries.messages is '+entries.messages);
         function checkMes(callback){
@@ -27,21 +23,14 @@ router.get('/messages', function(req, res){
             if (entries.messages === null) {
                 reject(new Error('could not get messages'));
             } else {
-                res.render('admin/messages', {
-                    'messages': entries.messages
-                });
+                res.render('admin/messages', {'messages': entries.messages});
             }
         })
     });
-
 });
 
 router.get('/subscribers', function(req, res){
-
-    let entries = {
-        subscribers: null
-    };
-
+    let entries = { subscribers: null };
     fb_conn.getSubscribers(function(subscribers) {
         // console.log('inside getMessages - entries.messages is '+entries.messages);
         function checkSub(callback){
@@ -52,13 +41,18 @@ router.get('/subscribers', function(req, res){
             if (entries.subscribers === null) {
                 reject(new Error('could not get subscribers'));
             } else {
-                res.render('admin/subscribers', {
-                    'subscribers': entries.subscribers
-                });
+                res.render('admin/subscribers', {'subscribers': entries.subscribers});
             }
         })
     });
+});
 
+router.get('/create_post', function(req, res){
+    res.render('admin/create_post');
+});
+
+router.post('/create_post', function(req, res){
+    // res.render('admin/create_post');
 });
 
 module.exports = router;
